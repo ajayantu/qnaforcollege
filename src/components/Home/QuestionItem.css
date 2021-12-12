@@ -5,20 +5,16 @@
 }
 
 .user .user_icon {
-    outline: 3px solid grey;
+    background-color: rgb(204, 204, 204);
     height: 3rem;
     width: 3rem;
     border-radius: 50%;
     font-size: 1.5rem;
 
-    -webkit-background-clip: padding-box;
-    -webkit-border-radius: 3rem;
-    -moz-background-clip: padding; 
-    background-clip: padding-box;
 }
 
 .user .user_icon i{
-    padding: 13.2px;
+    padding: 13.3px;
 }
 .user .username{
     margin-left: 10px;

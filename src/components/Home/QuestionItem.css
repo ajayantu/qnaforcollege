@@ -1,0 +1,34 @@
+.user{
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    /* padding: 10px; */
+}
+
+.user .user_icon i{
+    outline: 3px solid grey;
+    border-radius: 50%;
+    padding: 10px;
+    font-size: 1.5rem;
+}
+.user .username{
+    margin-left: 10px;
+    font-weight: bold;
+}
+.user .username a{
+    margin-left: 10px;
+    font-weight: bold;
+    text-decoration: none;
+}
+.user .username a:hover{
+    
+    text-decoration: underline;
+}
+.qstn_title{
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+}
+.qstn_title:hover{
+    text-decoration: underline;   
+}

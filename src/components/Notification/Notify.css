@@ -1,0 +1,41 @@
+body{
+    height: 100vh;
+}
+
+.notify_container{
+    margin-left: 15rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+}
+
+.notify_item{
+    padding: 13px;
+    margin: 5px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+    background-color: #fff;
+}
+.notify_item a{
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+}
+.notify_item a:hover{
+    text-decoration: underline;
+}
+
+.new_notify{
+    float: right;
+    display: inline;
+    color: red;
+    font-weight: bold;
+}
+@media only screen and (max-width: 850px) {
+    .notify_container{
+        margin-left: 0;
+    }
+
+}
+
+

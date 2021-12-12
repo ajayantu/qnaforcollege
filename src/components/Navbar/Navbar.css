@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300&family=Poppins:wght@300;400&family=Roboto:wght@300&display=swap');
+
+*{
+    font-family: 'Poppins';
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #E9E9E9;
+    height: 100vh;
+}
+
+
+/* The Navbar  */
+nav{
+    background-color: #1c1b1a;
+    z-index: 10;
+    position: sticky;
+    top: 0;
+}
+.nav-content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+    padding: 12px;
+}
+
+.menu-items a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 5px;
+    margin-left: 5px;
+}
+
+.right-content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.right-content .ml{
+    margin-left: 15px;
+}
+.search-bar{
+    background: #fff;
+}
+.search-field{
+    padding: 6px;
+    border: none;
+    font-size: 0.9rem;
+}
+.search-field:focus{  
+    outline: none;
+}
+.search-icon{
+    cursor: pointer;
+    padding: 10px;
+    background: transparent;
+    border: none;
+}
+
+.bell-icon{
+    cursor: pointer;
+    margin: 10px 0 0 0;
+    margin-right: 5px;
+    position: relative;
+}
+.bell-icon i{
+    font-size: 1.5rem;
+}
+.bell-icon .badge{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: red;
+    color: #fff;
+    padding: 2px 4px;
+    position: absolute;
+    top: -8px;
+    right: -5px;
+    border-radius: 50%;
+    
+}
+.bell-icon .badge span{
+    font-size: 0.7rem;
+}
+.profile-pic{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #fff;
+}
+
+/* sidebar pop right icon */
+.nav-content .menu-bar{ 
+    cursor: pointer;
+    display: none;
+    font-size: 1.3rem;
+}
+
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 850px) {
+    .nav-content .menu-bar{
+        display: block;
+    }
+    .nav-content .search-bar{
+        display: none;
+    }
+    .nav-content .menu-items{
+        display: none;
+    }
+    .logo{
+        font-size: 1.2rem;
+    }
+    .bell-icon i{
+        font-size: 1.4rem;
+    }
+    .profile-pic{
+        width: 27px;
+        height: 27px;
+    }
+    .sidebar{
+        transform: translateX(-100%);
+        transition: transform 350ms ease-out;
+    }
+    .questions-container{
+        margin:0;
+    }
+}

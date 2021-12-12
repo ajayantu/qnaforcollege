@@ -1,0 +1,53 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300&display=swap');
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+.questions-container{
+    margin-left: 15rem;
+}
+.display{
+    margin: 20px;
+}
+.text-display{
+    border: 1px solid #dee0e1;
+    min-height: 50px;  
+    padding: 10px;  
+}
+.text-display p{
+    white-space: pre-wrap;
+    word-wrap: break-word; 
+}
+
+.submitBtn{
+    margin-top: 20px;
+}
+span{
+    display:block;
+    font-size: 1rem;
+}
+.left{
+    margin-top: 1rem;
+    margin-right: 10px;
+}
+
+.editor{
+    margin: 20px;
+}
+.main-control button{
+    width: 50px;
+    height: 100%;
+    margin-right:10px;
+}
+#text-content{
+    margin-top: 20px;
+    width: 50rem;
+    padding: 10px;
+    border: 1px solid #dee0e1;
+    outline: none;
+    min-height: 200px;
+}
+
+.container{
+    margin-top: 30px;
+}

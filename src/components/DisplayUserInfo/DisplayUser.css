@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300&family=Poppins&family=Roboto:wght@300&display=swap');
+
+.user_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.user_details{
+    padding: 30px;
+    box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.user_details span{
+    font-size: 1.3rem;
+    font-family: 'Poppins';
+}
+
+.user_container .user_icon i{
+    outline: 3px solid grey;
+    border-radius: 50%;
+    padding: 20px;
+    font-size: 3rem;
+}

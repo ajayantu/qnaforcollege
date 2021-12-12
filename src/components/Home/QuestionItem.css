@@ -7,7 +7,10 @@
 
 .user .user_icon i{
     outline: 3px solid grey;
-    border-radius: 50%;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;
     padding: 10px;
     font-size: 1.5rem;
 }

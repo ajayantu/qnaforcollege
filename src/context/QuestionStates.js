@@ -8,7 +8,7 @@ export default function QuestionStates(props) {
     const [user,setUser] = useState({});
     const [role,setRole] = useState("");
     const [notify,setNotify] = useState([]);
-    const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWFlMjg4MjYzZmZiMjc0NDIxNGUyMGYiLCJpYXQiOjE2MzkxMzg2MDR9.jNZapQimxC7uj9i2iIz7s1TDeqbmY14ZiW3KnWW9_3s";
+    const token = process.env.REACT_APP_MY_TOKEN;
     let count=0;
     const [notifyCount,setNotifyCount] = useState(0);
     const fetchQstns = async ()=>{

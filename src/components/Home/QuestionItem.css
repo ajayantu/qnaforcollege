@@ -10,6 +10,11 @@
     width: 3rem;
     border-radius: 50%;
     font-size: 1.5rem;
+
+    -webkit-background-clip: padding-box;
+    -webkit-border-radius: 3rem;
+    -moz-background-clip: padding; 
+    background-clip: padding-box;
 }
 
 .user .user_icon i{

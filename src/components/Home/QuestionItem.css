@@ -2,17 +2,18 @@
     display: flex;
     align-items: center;
     margin-bottom: 20px;
-    /* padding: 10px; */
+}
+
+.user .user_icon {
+    outline: 3px solid grey;
+    height: 3rem;
+    width: 3rem;
+    border-radius: 50%;
+    font-size: 1.5rem;
 }
 
 .user .user_icon i{
-    outline: 3px solid grey;
-    border-top-left-radius: 50%;
-    border-top-right-radius: 50%;
-    border-bottom-left-radius: 50%;
-    border-bottom-right-radius: 50%;
-    padding: 10px;
-    font-size: 1.5rem;
+    padding: 13.2px;
 }
 .user .username{
     margin-left: 10px;
@@ -22,6 +23,7 @@
     margin-left: 10px;
     font-weight: bold;
     text-decoration: none;
+    color: black;
 }
 .user .username a:hover{
     

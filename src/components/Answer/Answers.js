@@ -1,12 +1,39 @@
 import AnswerItem from './AnswerItem'
 import React,{useContext,useEffect, useState} from 'react'
 import questionContext from "../../context/Question"
-import Editor from 'ckeditor5-custom-build/build/ckeditor';
+import { CKEditor } from '@ckeditor/ckeditor5-react';
+import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import { useParams } from "react-router-dom";
-import { CKEditor } from '@ckeditor/ckeditor5-react'
 
 export default function Answers(props) {
     
+    var config={
+        toolbar : [ 'heading', '|','bold', 'italic', 'link', 'bulletedList', 'numberedList', 'outdent' ,'indent','|', 'blockQuote','insertTable' ],
+        heading: {
+            options: [
+                { model: 'paragraph', title: 'Paragraph', class: 'ck-heading_paragraph' },
+                { model: 'heading1', view: 'h1', title: 'Heading 1', class: 'ck-heading_heading1' },
+                { model: 'heading2', view: 'h2', title: 'Heading 2', class: 'ck-heading_heading2' }
+            ]
+        },
+        image: {
+            toolbar: [
+              'imageTextAlternative',
+              'imageStyle:side'
+            ]
+          },
+          table: {
+            contentToolbar: [
+              'tableColumn',
+              'tableRow',
+              'mergeTableCells'
+            ]
+          },
+       ckfinder:{
+           uploadUrl:'http://localhost:5000/api/uploads'
+       }
+    }
+
     const { qstnId } = useParams();
     const [ans,setAns] = useState("");
     const { fetchAnswer,answers,addAnswer } = useContext(questionContext);
@@ -35,9 +62,11 @@ export default function Answers(props) {
                     <h2>Add Answer</h2>
                     <div className="editor-container">
                         <CKEditor
-                                editor={ Editor }
+                                editor={ ClassicEditor }
                                 data={props.data}
-                                onChange={ handleEditorChange }                                
+                                onChange={ handleEditorChange }
+                                config = { config }
+                                
                             />
                     </div>
                     <button className="btn_submit_ans" onClick={handleSubmitAns}>Submit</button>

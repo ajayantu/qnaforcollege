@@ -4,11 +4,11 @@ import questionContext from "../../context/Question"
 import { CKEditor } from '@ckeditor/ckeditor5-react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import { useParams } from "react-router-dom";
-
 export default function Answers(props) {
     
     var config={
-        toolbar : [ 'heading', '|','bold', 'italic', 'link', 'bulletedList', 'numberedList', 'outdent' ,'indent','|', 'blockQuote','insertTable' ],
+        toolbar : [ 'heading', '|','bold', 'italic','blockQuote', 'link', 'bulletedList', 'numberedList', 'outdent' ,'indent','|','insertTable' ],
+
         heading: {
             options: [
                 { model: 'paragraph', title: 'Paragraph', class: 'ck-heading_paragraph' },
@@ -36,7 +36,7 @@ export default function Answers(props) {
 
     const { qstnId } = useParams();
     const [ans,setAns] = useState("");
-    const { fetchAnswer,answers,addAnswer } = useContext(questionContext);
+    const { fetchAnswer,answers,addAnswer,loading } = useContext(questionContext);
 
     const handleSubmitAns = ()=>{
         addAnswer(ans,qstnId);
@@ -54,10 +54,11 @@ export default function Answers(props) {
     return (
         <>
             <div className="answer-container">
-                {answers.length===0? <p>Fetching Answers.....</p>:
+                {!answers?<p className='no-items-text'>No Answers for this Question</p>:
                         answers.map((ans)=>{
                             return <AnswerItem key={ans._id} ans={ans} />
                 })}
+                
                 <div className="addAnswer">
                     <h2>Add Answer</h2>
                     <div className="editor-container">

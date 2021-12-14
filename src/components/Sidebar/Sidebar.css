@@ -21,23 +21,25 @@
 .sidebar-content .sub-menu{
     margin-left: 30px;
 }
-.sidebar-content .sub-menu li a{
+.sidebar-content .sub-menu a{
     font-weight: unset;
     color: #6B6565;
     
 }
-.sidebar-content .sub-menu li{
+.sidebar-content .sub-menu a{
     margin-bottom: 10px;
 }
 .sidebar-content li{
     list-style: none;
     padding: 6px;
 }
-.sidebar-content li a{
+.sidebar-content .side-menu{
+    color: #272727;
     text-decoration: none;
-    color: black;
     font-weight: bold;
-    margin-left: 30px;
+}
+.sidebar-content .side-menu li p{
+    margin-left: 28px;
 
 }
 .selected-sidemenu{

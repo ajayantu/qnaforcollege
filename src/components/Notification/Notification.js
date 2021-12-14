@@ -7,7 +7,7 @@ export default function Notification() {
     return (
         <>
             <div className="notify_container">
-                {notify.length===0?"No new Notification...":notify.map((notif)=>{
+                {notify && notify.map((notif)=>{
                     return <NotificationItem key={notif._id} notif={notif}  />
                 })}
             </div>

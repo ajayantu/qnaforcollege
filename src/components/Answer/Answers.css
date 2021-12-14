@@ -109,10 +109,20 @@
     font-size: 16px;
     cursor: pointer;
 }
+.answer-container .no-items-text{
+    text-align: center;
+    margin-top: 20px;
+}
 
 @media only screen and (max-width: 850px) {
     .answer-container{
         margin-left: 0;
+    }
+
+}
+@media only screen and (max-width: 450px) {
+    .ans-item{
+        font-size: 0.94rem;
     }
 
 }

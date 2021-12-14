@@ -1,10 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
+import QuestionStates from './context/QuestionStates'
 
 ReactDOM.render(
   <React.StrictMode>
+    <QuestionStates>
     <App />
+    </QuestionStates>
   </React.StrictMode>,
   document.getElementById('root')
 );

@@ -13,7 +13,7 @@ function Home(props) {
     return (
         <>
             <div className="questions-container">
-                {questions.length===0? <p>Fetching Questions.....</p>:
+                {
                     questions.map((qstn)=>{
                         return <QuestionItem key={qstn._id} qstn={qstn} qstnId={qstn._id} />
                 })}

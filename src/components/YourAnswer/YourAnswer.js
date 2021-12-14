@@ -3,7 +3,7 @@ import questionContext from "../../context/Question"
 import YourAnswerItem from './YourAnswerItem';
 
 export default function YourAnswer() {
-    const { fetchUserAnsQstn,userAnsQstns,loading } = useContext(questionContext);
+    const { fetchUserAnsQstn,userAnsQstns } = useContext(questionContext);
     useEffect(()=>{
         fetchUserAnsQstn();
         // eslint-disable-next-line

@@ -36,7 +36,7 @@ export default function Answers(props) {
 
     const { qstnId } = useParams();
     const [ans,setAns] = useState("");
-    const { fetchAnswer,answers,addAnswer,loading } = useContext(questionContext);
+    const { fetchAnswer,answers,addAnswer } = useContext(questionContext);
 
     const handleSubmitAns = ()=>{
         addAnswer(ans,qstnId);

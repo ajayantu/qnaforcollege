@@ -2,13 +2,12 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import './Sidebar.css'
 
-
 export default function Sidebar() {
-    const handleSidebar = ()=>{
+    const handleSidebar = () => {
         const sidebar = document.querySelector(".sidebar");
         const visibility = sidebar.getAttribute('data-visible');
-        if(visibility === "true"){
-            sidebar.setAttribute("data-visible",false);
+        if (visibility === "true") {
+            sidebar.setAttribute("data-visible", false);
         }
     }
     return (
@@ -35,7 +34,7 @@ export default function Sidebar() {
                             <p>Users</p>
                         </li>
                     </Link>
-        
+
                     <div className="sub-menu">
                         <Link to="/" onClick={handleSidebar} className="side-menu-link side-menu">
                             <li >
@@ -47,7 +46,7 @@ export default function Sidebar() {
                                 <p>Teachers</p>
                             </li>
                         </Link>
-                    </div>    
+                    </div>
                 </ul>
             </div>
         </>

@@ -12,33 +12,25 @@ import questionContext from "./context/Question"
 import React, { useContext } from 'react'
 
 function App() {
-const { progress } = useContext(questionContext);
-const myStyle = {
-  position:"relative",
-  top:60
-}
+  const { progress } = useContext(questionContext);
   return (
-    
-      <Router>
+    <Router>
       <Navbar />
       <LoadingBar
         color='#f11946'
         progress={progress}
-        style={myStyle}
-        height={3}
-        // onLoaderFinished={() => setProgress(0)}
+        height={2.73}
       />
       <Sidebar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/answers/:qstnId" element={<Answers />} />
-          <Route path="/user/:userId" element={<DisplayUser />} />
-          <Route path="/notify" element={<Notification />} />
-          <Route path="/yourqstn" element={<YourQstn />} />
-          <Route path="/yourans" element={<YourAnswer />} />
-        </Routes>
-      </Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/answers/:qstnId" element={<Answers />} />
+        <Route path="/user/:userId" element={<DisplayUser />} />
+        <Route path="/notify" element={<Notification />} />
+        <Route path="/yourqstn" element={<YourQstn />} />
+        <Route path="/yourans" element={<YourAnswer />} />
+      </Routes>
+    </Router>
   );
 }
-
 export default App;

@@ -1,5 +1,5 @@
 import React from 'react'
-
+import { Link } from 'react-router-dom'
 import './QuestionItem.css'
 
 export default function QuestionItem(props) {
@@ -10,7 +10,7 @@ export default function QuestionItem(props) {
                 <div className="username"><a href={`/user/${props.qstn.user._id}`}>{props.qstn.user.username}</a></div>
             </div>
 
-            <a href={`/answers/${props.qstnId}`} className="qstn_title">{props.qstn.title}</a>
+            <Link to={`/answers/${props.qstnId}`} className="qstn_title">{props.qstn.title}</Link>
             <br /><br />
             {props.qstn.description}
         </div>

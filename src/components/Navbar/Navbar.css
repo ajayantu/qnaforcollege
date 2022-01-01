@@ -96,10 +96,11 @@ nav{
 .profile-pic{
     display: flex;
     position: relative;
-    width: 30px;
-    height: 30px;
+    width: 35px;
+    height: 35px;
     border-radius: 50%;
-    background: #fff;
+    padding: 2px;
+    border: 2px solid #009B72;
 }
 .profile-pic .dropdown-list{
     position: relative;

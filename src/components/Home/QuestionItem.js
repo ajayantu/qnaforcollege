@@ -6,8 +6,8 @@ import questionContext from "../../context/Question"
 import { useNavigate } from 'react-router-dom'
 
 export default function QuestionItem(props) {
-    let navigate = useNavigate();
     const { findBadge } = useContext(questionContext);
+    let navigate = useNavigate();
     const fullBadge = findBadge(props.qstn.user.badge);
     const badgeStyle = {
         backgroundColor: fullBadge.color,

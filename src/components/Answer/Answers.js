@@ -49,7 +49,6 @@ export default function Answers(props) {
 
         }
         else{
-
             addAnswer(ans, qstnId);
         }
     }

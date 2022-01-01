@@ -2,6 +2,7 @@ import React, { useEffect, useContext } from 'react'
 import './Navbar.css'
 import questionContext from "../../context/Question"
 import { useNavigate } from 'react-router-dom';
+import icon from './user-icon.png';
 
 export default function Navbar() {
     const { fetchNotify, notifyCount, editNotify, isLogin, setIsLogin } = useContext(questionContext);
@@ -60,6 +61,7 @@ export default function Navbar() {
                     <div className="right-content">
                         {isLogin &&
                             <div className="profile-pic" onClick={handleUserDropdown}>
+                                <img src={icon} alt="" />
                                 <div className="dropdown-list" data-visible="false" >
                                     <i className="fas fa-caret-down"></i>
                                     <div className="dropdown-list-item"><a href="/">Profile</a></div>
@@ -78,7 +80,7 @@ export default function Navbar() {
 
                         <div className="right-buttons">
                             {/* {isLogin && <button onClick={handleLogout}>Logout</button>} */}
-                            {isLogin ? <button className='ask-btn' style={{ marginLeft: 20 }}>Ask Question</button> :
+                            {!isLogin &&
                                 <>
                                     <button onClick={handleLogin} className='login-btn'>Login</button>
                                     <button onClick={handleSignup} className='signup-btn'>Signup</button>

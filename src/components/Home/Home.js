@@ -12,7 +12,12 @@ function Home() {
     return (
         <>
             <div className="contents">
+                <div className="question-header">
+                    <h1>All Questions</h1>
+                    <button className='ask-btn' style={{ marginLeft: 20 }}>Ask Question</button>
+                </div>
                 <div className="content-container">
+                
                 {
                     questions.map((qstn) => {
                         return <QuestionItem key={qstn._id} qstn={qstn} qstnId={qstn._id} />

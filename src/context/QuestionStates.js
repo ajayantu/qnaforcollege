@@ -72,18 +72,16 @@ export default function QuestionStates(props) {
 
         let fl = 0;
         for (let i = 0; i < data.answers.length; i++) {
-            const qstnfetch = data.answers[i].question;
             fl = 0;
             for (let j = 0; j < qstns.length; j++) {
-                const qstnar = qstns[j];
-                if (qstnfetch._id === qstnar._id) {
+                if (data.answers[i].question._id === qstns[j]._id) {
                     fl = 1
                     break;
                 }
 
             }
             if (fl === 0) {
-                qstns.push(qstnfetch);
+                qstns.push(data.answers[i].question);
             }
 
         }
@@ -114,11 +112,8 @@ export default function QuestionStates(props) {
         setProgress(100)
     }
 
-    const addAnswer = async (ans, qstnId) => {
-        const myAns = {
-            answer: ans.toString()
-        };
-        const res = await axios.post(`${host}/addans/${qstnId}`, myAns, {
+    const addAnswer = async (answer, qstnId) => {
+        const res = await axios.post(`${host}/addans/${qstnId}`,{answer}, {
             headers: {
                 'auth_token': localStorage.getItem("token")
             },
@@ -131,6 +126,7 @@ export default function QuestionStates(props) {
         }
         else {
             if (res.data.flag === 1) {
+                console.log(res.data);
             }
         }
     }

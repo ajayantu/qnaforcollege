@@ -14,7 +14,7 @@ body{
 
 /* The Navbar  */
 nav{
-    background-color: #1c1b1a;
+    background-color: #2A2D34;
     z-index: 10;
     position: sticky;
     top: 0;
@@ -44,28 +44,32 @@ nav{
 .right-content .ml{
     margin-left: 15px;
 }
-.search-bar{
-    background: #fff;
+.right-content .ask-question{
+    margin-left: 20px;
 }
-.search-field{
-    padding: 6px;
-    border: none;
-    font-size: 0.9rem;
-}
-.search-field:focus{  
-    outline: none;
-}
-.search-icon{
+.right-content .right-buttons .ask-btn,.signup-btn{
     cursor: pointer;
-    padding: 10px;
-    background: transparent;
     border: none;
+    border-radius: 4px;
+    padding: 5px 8px;
+    background-color: #009DDC;
+    color:#fff;
+    font-weight: 400;
+}
+.right-content .right-buttons .login-btn{
+    cursor: pointer;
+    border-radius: 4px;
+    padding: 5px 8px;
+    background-color: rgb(225, 236, 244);
+    color:rgb(57, 115, 157);
+    font-weight: 400;
+    margin-right: 6px;
 }
 
 .bell-icon{
+    margin-top: 9px;
+    margin-left: 15px;
     cursor: pointer;
-    margin: 10px 0 0 0;
-    margin-right: 5px;
     position: relative;
 }
 .bell-icon i{
@@ -77,10 +81,12 @@ nav{
     align-items: center;
     background-color: red;
     color: #fff;
-    padding: 2px 4px;
+    /* padding: 2px; */
+    width: 18px;
+    height: 18px;
     position: absolute;
-    top: -8px;
-    right: -5px;
+    top: -7px;
+    right: -4px;
     border-radius: 50%;
     
 }
@@ -88,11 +94,46 @@ nav{
     font-size: 0.7rem;
 }
 .profile-pic{
+    display: flex;
+    position: relative;
     width: 30px;
     height: 30px;
     border-radius: 50%;
     background: #fff;
 }
+.profile-pic .dropdown-list{
+    position: relative;
+    min-width: 150px;
+    position: absolute;
+    top: 50px;
+    right: 0px;
+    border-radius: 6px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    background-color: #fff;
+    color: black;
+    opacity: 0;
+    visibility: hidden;
+}
+.profile-pic .dropdown-list[data-visible="true"]{
+    opacity: 1;
+    visibility: visible;
+}
+.profile-pic .dropdown-list i{
+    float: right;
+    transform: rotate(180deg);
+    position: absolute;
+    top: -10px;
+    right: 5px;
+    color: #fff;
+}
+.dropdown-list-item{
+    padding: 0.5rem 1.3rem;
+}
+.dropdown-list-item a{
+    text-decoration: none;
+    color: black;
+}
+
 
 /* sidebar pop right icon */
 .nav-content .menu-bar{ 
@@ -101,20 +142,11 @@ nav{
     font-size: 1.3rem;
 }
 
-
-
-
-
-
-
-
-
-
 @media only screen and (max-width: 850px) {
     .nav-content .menu-bar{
         display: block;
     }
-    .nav-content .search-bar{
+    .nav-content .ask-question{
         display: none;
     }
     .nav-content .menu-items{

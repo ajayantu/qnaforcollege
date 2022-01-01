@@ -3,9 +3,11 @@ import React, { useContext, useEffect, useState } from 'react'
 import questionContext from "../../context/Question"
 import { CKEditor } from '@ckeditor/ckeditor5-react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+import { useNavigate } from 'react-router-dom'
+
 import { useParams } from "react-router-dom";
 export default function Answers(props) {
-
+    const navigate = useNavigate();
     var config = {
         toolbar: ['heading', '|', 'bold', 'italic', 'blockQuote', 'link', 'bulletedList', 'numberedList', 'outdent', 'indent', '|', 'insertTable'],
 
@@ -38,8 +40,18 @@ export default function Answers(props) {
     const [ans, setAns] = useState("");
     const { fetchAnswer, answers, addAnswer, setAnswers } = useContext(questionContext);
 
-    const handleSubmitAns = () => {
-        addAnswer(ans, qstnId);
+    const handleSubmitAns = (e) => {
+        const token = localStorage.getItem('token');
+        if (!token) {
+            e.preventDefault();
+            console.log("Please login first");
+            navigate("/login");
+
+        }
+        else{
+
+            addAnswer(ans, qstnId);
+        }
     }
 
     const handleEditorChange = (e, editor) => {

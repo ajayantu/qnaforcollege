@@ -13,41 +13,43 @@ export default function Sidebar() {
     return (
         <>
             <div className="sidebar" data-visible="false">
-                <ul className="sidebar-content">
-                    <Link to="/" onClick={handleSidebar} className="selected-sidemenu side-menu">
-                        <li>
+                <div className="sidebar-content">
+                    <Link to="/home" id={window.location.pathname === "/home"?"selected-sidemenu":""} onClick={handleSidebar} className="side-menu">
+                        <div className="side-menu-item">
+                            <i className="fas fa-home"></i>
+                            <p>Home</p>
+                        </div>
+                    </Link>
+                    <Link to="/questions" id={window.location.pathname === "/questions"?"selected-sidemenu":""} onClick={handleSidebar} className="side-menu">
+                        <div className="side-menu-item">
+                            <i className="fas fa-globe-asia"></i>
                             <p>Questions</p>
-                        </li>
+                        </div>
                     </Link>
-                    <Link to="/yourqstn" onClick={handleSidebar} className="side-menu-link side-menu">
-                        <li >
-                            <p>Asked by you</p>
-                        </li>
-                    </Link>
-                    <Link to="/yourans" onClick={handleSidebar} className="side-menu-link side-menu">
-                        <li >
-                            <p>Answered by you</p>
-                        </li>
-                    </Link>
-                    <Link to="/" onClick={handleSidebar} className="side-menu-link side-menu">
-                        <li >
+                    <div className="sub-menu">
+                        <Link to="/yourqstn" id={window.location.pathname === "/yourqstn"?"selected-sidemenu":""} onClick={handleSidebar} className="side-menu">
+                            <p>Featured</p>
+                        </Link>
+                        <Link to="/yourans" id={window.location.pathname === "/yourans"?"selected-sidemenu":""} onClick={handleSidebar} className="side-menu">
+                            <p>Popular</p>
+                        </Link>
+                    </div>
+                    <Link to="" onClick={handleSidebar} className="side-menu">
+                        <div className="side-menu-item">
+                            <i className="fas fa-users"></i>
                             <p>Users</p>
-                        </li>
+                        </div>
                     </Link>
 
                     <div className="sub-menu">
-                        <Link to="/" onClick={handleSidebar} className="side-menu-link side-menu">
-                            <li >
+                        <Link to="/getstudents" id={window.location.pathname === "/getstudents"?"selected-sidemenu":""} onClick={handleSidebar} className="side-menu">
                                 <p>Students</p>
-                            </li>
                         </Link>
-                        <Link to="/" onClick={handleSidebar} className="side-menu-link side-menu">
-                            <li >
+                        <Link to="/" onClick={handleSidebar} className="side-menu">
                                 <p>Teachers</p>
-                            </li>
                         </Link>
                     </div>
-                </ul>
+                </div>
             </div>
         </>
     )

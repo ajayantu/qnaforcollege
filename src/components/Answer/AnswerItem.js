@@ -1,10 +1,10 @@
 import React from 'react'
-import ReactHtmlParser from 'react-html-parser';
+import parse from 'html-react-parser'
 import './Answers.css'
 export default function AnswerItem(props) {
     return (
         <div className="answer dpm ans-item" >
-            {ReactHtmlParser(props.ans.answer)}
+            {parse(props.ans.answer)}
         </div>
     )
 }

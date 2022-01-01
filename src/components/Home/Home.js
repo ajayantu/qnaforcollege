@@ -11,11 +11,13 @@ function Home() {
 
     return (
         <>
-            <div className="questions-container">
+            <div className="contents">
+                <div className="content-container">
                 {
                     questions.map((qstn) => {
                         return <QuestionItem key={qstn._id} qstn={qstn} qstnId={qstn._id} />
                     })}
+                </div>
             </div>
         </>
     )

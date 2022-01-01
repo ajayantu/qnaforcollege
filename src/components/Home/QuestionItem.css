@@ -1,40 +1,141 @@
-.user{
+.contents{
+    margin-left: 15rem;
     display: flex;
+    /* flex-wrap: wrap; */
+    justify-content: center;
+    /* align-items: center; */
+}
+.content-container{
+    width: 100%;
+    margin-top: 10px;
+}
+.content-container .card img{
+    object-fit: cover;
+    max-height: 450px;
+}
+.content-container .card{
+    margin-left: 10px;
+    margin-right: 10px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    margin-bottom: 10px;
+    box-shadow: 0 1px 7px rgb(0 0 0 / 5%);
+    border-radius: .25rem;
+}
+.content-container .card .card-block{
+    padding: 20px;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.contents .content-container .card .qstn-img{
+    width: 100%;
+}
+.card-footer{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
     align-items: center;
-    margin-bottom: 20px;
-}
 
-.user .user_icon {
-    background-color: rgb(204, 204, 204);
-    height: 3rem;
-    width: 3rem;
+}
+.card-footer .author{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.card-footer .author a img{
+    margin-top: 15px;
+    border: 2px solid #407cf7;
+    padding: 2px;
     border-radius: 50%;
-    font-size: 1.5rem;
+}
+.card-footer .author .author-details{
+    margin-left: 20px;
 
 }
-
-.user .user_icon i{
-    padding: 13.3px;
-}
-.user .username{
-    margin-left: 10px;
-    font-weight: bold;
-}
-.user .username a{
-    margin-left: 10px;
+.card-footer .author .author-details .author-name a{
     font-weight: bold;
     text-decoration: none;
-    color: black;
+    color: rgba(0,0,0,.8);
+    font-size: 14px;
+    /* color: #5fb6f8; */
+
 }
-.user .username a:hover{
-    
+.card-footer .author .author-details .author-name a:hover{
+    text-decoration: underline;
+
+}
+.card-footer .author .author-thumb{
+    width: 50px;
+
+}
+.card .card-block .card-text{
+    color: #707885;
+    font-size: 0.95rem;
+    font-weight: 400;
+}
+
+.card .card-block h2 a{
+    color: rgba(0,0,0,.8);
+    text-decoration: none;
+    font-size: 1.3rem;
+}
+.card .card-block h2 a:hover{
     text-decoration: underline;
 }
-.qstn_title{
-    font-weight: bold;
-    text-decoration: none;
-    color: black;
+
+.card .card-block .answer-content button{
+    cursor: pointer;
+    border: 2px solid #e7e7e7;
+    font-size: 100%;
+    background-color: transparent;
+    width: 100%;
 }
-.qstn_title:hover{
-    text-decoration: underline;   
+.card .card-block .answer-content button:hover{
+    background-color: #e7e7e7;
+}
+.card .card-block .answer-content .ans-num span{
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: rgba(0,0,0,.44);
+}
+.card .card-block .answer-content{
+    margin-top: 6px;
+}
+
+.card .date-time span{
+    color: rgba(0,0,0,.44);
+}
+
+.card-block .card-footer .author .author-details .author-badge{
+    padding: 3px 5px;
+    font-size: 11px;
+}
+.card-block .answer-content a{
+    text-decoration: none;
+    color: #707885;
+}
+.card-block .answer-content{
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+.card-block .answer-content .answer-btn{
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+@media only screen and (max-width: 850px) {
+    .contents{
+        margin:0;
+    }
+    .card .card-block h2 a{
+        font-size: 1rem;
+    }
+    .card .date-time span{
+        font-size: 0.9rem;
+    }
 }

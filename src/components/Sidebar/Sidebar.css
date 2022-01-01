@@ -8,42 +8,51 @@
     height: 100%;
     width: 15rem;
     justify-content: center;
-    z-index: 12;
+    z-index: 8;
+    box-shadow: 0 1px 7px rgb(0 0 0 / 5%);
 }
 .sidebar-content {
     width: 100%;
     margin-top: 20px;
     display: flex;
     flex-direction: column;
-    gap: 20px;
 }
 
 .sidebar-content .sub-menu{
-    margin-left: 30px;
+    display: flex;
+    flex-direction: column;
 }
 .sidebar-content .sub-menu a{
     font-weight: unset;
     color: #6B6565;
+    display: inline;
     
 }
-.sidebar-content .sub-menu a{
-    margin-bottom: 10px;
+.sidebar-content .sub-menu .side-menu p{
+    margin-left: 60px;
+    display: inline;
+    font-size: 0.92rem;
 }
-.sidebar-content li{
-    list-style: none;
-    padding: 6px;
+.sidebar-content .side-menu .side-menu-item{
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
 }
 .sidebar-content .side-menu{
+    margin-bottom: 15px;
     color: #272727;
     text-decoration: none;
-    font-weight: bold;
+    /* font-weight: bold; */
+    padding: 6px;
+    /* justify-content: center; */
 }
-.sidebar-content .side-menu li p{
-    margin-left: 28px;
-
+.sidebar-content .side-menu  p{
+    margin-left: 10px;
 }
-.selected-sidemenu{
+#selected-sidemenu{
     background-color: #E9E9E9;
+    font-weight: bold;
+    border-right: 3px solid #FBB566;
 }
 
 /* will only active if data-visible attribute of sidebar is true ...is set to true using javascript*/

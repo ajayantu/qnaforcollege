@@ -10,9 +10,12 @@ import YourAnswer from "./components/YourAnswer/YourAnswer";
 import LoadingBar from 'react-top-loading-bar'
 import questionContext from "./context/Question"
 import React, { useContext } from 'react'
+import Students from './components/Users/Students'
+import Login from "./components/UserRegistration/Login";
+import Signup from "./components/UserRegistration/Signup";
 
 function App() {
-  const { progress } = useContext(questionContext);
+  const { progress, isLogin } = useContext(questionContext);
   return (
     <Router>
       <Navbar />
@@ -23,12 +26,15 @@ function App() {
       />
       <Sidebar />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/questions" element={<Home />} />
         <Route path="/answers/:qstnId" element={<Answers />} />
         <Route path="/user/:userId" element={<DisplayUser />} />
         <Route path="/notify" element={<Notification />} />
         <Route path="/yourqstn" element={<YourQstn />} />
         <Route path="/yourans" element={<YourAnswer />} />
+        <Route path="/getstudents" element={<Students />} />
+        {!isLogin && <Route path="/login" element={<Login />} />}
+        {!isLogin && <Route path="/signup" element={<Signup />} />}
       </Routes>
     </Router>
   );

@@ -1,0 +1,17 @@
+.students-container{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-left: 15rem;
+}
+.student-item{
+    padding: 10px;
+    background-color: #fff;
+    margin: 10px;
+}
+@media only screen and (max-width: 850px) {
+    .students-container{
+        margin-left: 0;
+    }
+
+}

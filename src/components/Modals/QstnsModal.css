@@ -1,0 +1,89 @@
+.modal-main{
+    /* height: 90vh; */
+    display: flex;
+    margin-left: 15rem;
+    justify-content: center;
+    align-items: center;
+}
+.modal-background[data-visible="true"]{
+    transform: translateY(0%);  
+}
+.modal-background{
+    transform: translateY(-200%);
+    transition: transform 350ms ease-out;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: fixed;
+    top: 30%;
+    padding: 50px;
+    background-color: #fff;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 48px;
+    /* z-index: 10; */
+}
+.modal-background .close-icon{
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+.modal-container{
+    max-width: 300px;
+    max-height: 200px;
+    padding: 5px;
+    height: 10rem;
+    overflow: scroll;
+}
+.qstn-select{
+    cursor: pointer;
+    background-color: rgb(255, 255, 255);
+    padding: 10px;
+    margin-bottom: 2px;
+}
+.qstn-select:hover{
+    background-color: rgba(227, 231, 252, 0.938);
+}
+.qstn-select :hover{
+    text-decoration: underline;
+}
+.modal-qstn-submit{
+    cursor: pointer;
+    margin-top: 25px;
+    background-color: #F26430;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+}
+.modal-qstn-selected{
+    background-color: rgb(255, 230, 230);
+}
+@media only screen and (max-width: 850px) {
+    .modal-main{
+        margin-left: 0;
+    }
+    .modal-background{
+        max-width: 360px;
+        padding: 40px;
+        font-size: 0.9rem;
+    }
+}
+@media only screen and (max-width: 450px) {
+    .modal-main{
+        margin-left: 0;
+    }
+    .modal-background{
+        max-width: 330px;
+        padding: 30px;
+        font-size: 0.8rem;
+    }
+}
+@media only screen and (max-width: 350px) {
+    .modal-main{
+        margin-left: 0;
+    }
+    .modal-background{
+        max-width: 300px;
+        padding: 20px;
+        font-size: 0.75rem;
+    }
+}

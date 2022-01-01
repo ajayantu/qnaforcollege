@@ -18,7 +18,7 @@ export default function DisplayUser() {
         <>
             <div className="user_container">
                 <div className="user_details">
-                <div className="user_icon"><i class="fas fa-user"></i></div>
+                <div className="user_icon"><i className="fas fa-user"></i></div>
                     <pre>
                     <span>Username                     :    {user?user.username:""}</span>
                     <span>Role                                :    {user?role:""}</span>

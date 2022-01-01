@@ -3,14 +3,16 @@ import questionContext from "../../context/Question"
 import NotificationItem from './NotificationItem';
 import './Notify.css'
 export default function Notification() {
-    const { notify } = useContext(questionContext);
+    const { notify,isLogin } = useContext(questionContext);
     return (
         <>
-            <div className="notify_container">
-                {notify && notify.map((notif)=>{
-                    return <NotificationItem key={notif._id} notif={notif}  />
-                })}
-            </div>
+            {isLogin && 
+                <div className="notify_container">
+                    {notify && notify.map((notif)=>{
+                        return <NotificationItem key={notif._id} notif={notif}  />
+                    })}
+                </div>
+            }
         </>
     )
 }

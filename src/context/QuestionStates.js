@@ -3,7 +3,7 @@ import QuestionContext from './Question'
 import axios from 'axios'
 
 export default function QuestionStates(props) {
-    const host = 'http://localhost:5000/api';
+    const host = 'https://qnaforcollege.herokuapp.com/api';
     const [isLogin, setIsLogin] = useState(localStorage.getItem("token") ? true : false);
     const [questions, setQuestions] = useState([]);
     const [userQstns, setUserQstns] = useState([]);
@@ -23,7 +23,6 @@ export default function QuestionStates(props) {
         setProgress(10)
         const res = await axios.post(`${host}/signup`, { username, email, password })
         setProgress(100)
-        console.log(res.data);
 
         if (res.data.status === "ok") {
             return 0;
@@ -32,7 +31,6 @@ export default function QuestionStates(props) {
     }
     const login = async (email, password) => {
         const res = await axios.post(`${host}/signin`, { email, password })
-        console.log(res.data);
 
         if (res.data.status === "ok") {
             localStorage.setItem("token", res.data.token);
@@ -133,7 +131,6 @@ export default function QuestionStates(props) {
         }
         else {
             if (res.data.flag === 1) {
-                console.log("Question already answered by you..");
             }
         }
     }
@@ -232,11 +229,10 @@ export default function QuestionStates(props) {
     }
     const handleAsk = async () => {
         if (!userId || !qstnId) {
-            console.log("please select a user and a question");
         }
         else {
-            console.log("Question id : ", qstnId);
-            console.log("User id : ", userId);
+            // console.log("Question id : ", qstnId);
+            // console.log("User id : ", userId);
             const modal = document.querySelector(".modal-background");
             const visibility = modal.getAttribute('data-visible');
             if (visibility === "true") {

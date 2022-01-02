@@ -20,13 +20,15 @@
     font-weight: 400;
 }
 .question-header .ask-btn{
-    cursor: pointer;
-    border: none;
-    border-radius: 4px;
     padding: 5px 8px;
-    background-color: #009DDC;
-    color:#fff;
     font-weight: 400;
+    box-shadow: rgba(255, 255, 255, 0.4) 0px 1px 0px 0px inset;
+    cursor: pointer;
+    border: 1px solid transparent;
+    border-radius: 3px;
+    background-color: rgb(10, 149, 255);
+    color:#fff;
+    user-select: none;
 }
 .content-container{
     width: 100%;
@@ -163,6 +165,9 @@
     }
     .question-header h1{
         font-size: 1.5rem;
+    }
+    .question-header .ask-btn{
+        padding: 4px 4px;
     }
 }
 @media only screen and (max-width: 350px) {

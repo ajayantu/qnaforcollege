@@ -1,13 +1,31 @@
 .students-container{
+    margin-top: 10px;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     margin-left: 15rem;
 }
 .student-item{
+    font-size: 0.8rem;
+    color: rgba(0,0,0,.8);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     padding: 10px;
     background-color: #fff;
-    margin: 10px;
+    margin: 0 10px;
+}
+.student-item button{
+    box-shadow: rgba(255, 255, 255, 0.4) 0px 1px 0px 0px inset;
+    margin-top: 8px;
+    cursor: pointer;
+    border: 1px solid transparent;
+    border-radius: 3px;
+    padding: 0px 18px;
+    background-color: rgb(10, 149, 255);
+    color:#fff;
+    user-select: none;
 }
 @media only screen and (max-width: 850px) {
     .students-container{

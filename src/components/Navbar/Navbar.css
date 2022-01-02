@@ -26,6 +26,9 @@ nav{
     color: #fff;
     padding: 12px;
 }
+.logo{
+    user-select: none;
+}
 
 .menu-items a{
     text-decoration: none;
@@ -34,6 +37,7 @@ nav{
     font-weight: bold;
     padding: 5px;
     margin-left: 5px;
+    user-select: none;
 }
 
 .right-content{
@@ -71,6 +75,7 @@ nav{
     margin-left: 15px;
     cursor: pointer;
     position: relative;
+    user-select:none;
 }
 .bell-icon i{
     font-size: 1.5rem;
@@ -94,12 +99,13 @@ nav{
     font-size: 0.7rem;
 }
 .profile-pic{
+    cursor: pointer;
     display: flex;
     position: relative;
-    width: 35px;
-    height: 35px;
+    width: 38px;
+    height: 38px;
     border-radius: 50%;
-    padding: 2px;
+    padding: 1px;
     border: 2px solid #009B72;
 }
 .profile-pic .dropdown-list{
@@ -114,6 +120,10 @@ nav{
     color: black;
     opacity: 0;
     visibility: hidden;
+    user-select: none;
+}
+.profile-pic img{
+    user-select: none;
 }
 .profile-pic .dropdown-list[data-visible="true"]{
     opacity: 1;
@@ -160,8 +170,8 @@ nav{
         font-size: 1.4rem;
     }
     .profile-pic{
-        width: 27px;
-        height: 27px;
+        width: 32px;
+        height: 32px;
     }
     .sidebar{
         transform: translateX(-100%);

@@ -99,7 +99,6 @@ nav{
     font-size: 0.7rem;
 }
 .profile-pic{
-    cursor: pointer;
     display: flex;
     position: relative;
     width: 38px;
@@ -120,10 +119,6 @@ nav{
     color: black;
     opacity: 0;
     visibility: hidden;
-    user-select: none;
-}
-.profile-pic img{
-    user-select: none;
 }
 .profile-pic .dropdown-list[data-visible="true"]{
     opacity: 1;

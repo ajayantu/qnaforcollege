@@ -14,7 +14,6 @@ exports.updatePic = async (req,res)=>{
         user.save();
         const realpath = "public/"+pathh.split("public")[1]
         if(fs.existsSync(realpath)){
-            console.log("The path exists and can be deleted");
             fs.unlink(realpath, (err) => {
                 if (err) {
                 console.error(err);
@@ -25,7 +24,7 @@ exports.updatePic = async (req,res)=>{
         }
         else
         {
-            return res.json({staus:"error"});
+            return res.json({status:"success",url:finalUrl});
         }
     }
     else

@@ -3,7 +3,7 @@ import QuestionContext from './Question'
 import axios from 'axios'
 
 export default function QuestionStates(props) {
-    const host = 'http://localhost:5000/api';
+    const host = 'https://qnaforcollege.herokuapp.com/api';
     const [isLogin, setIsLogin] = useState(localStorage.getItem("token") ? true : false);
     const [questions, setQuestions] = useState([]);
     const [userQstns, setUserQstns] = useState([]);

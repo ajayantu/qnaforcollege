@@ -18,10 +18,17 @@
     font-size: 1.3rem;
     font-family: 'Poppins';
 }
-
-.user_container .user_icon i{
+.user_container .user_icon{
+    background-size: contain;
+    width: 33%;
+}
+.user_container .user_icon img{
     outline: 3px solid grey;
     border-radius: 50%;
-    padding: 20px;
+    padding: 3px;
     font-size: 3rem;
+    object-fit: cover;
+  width: 80px;
+  height: 80px;
+ 
 }

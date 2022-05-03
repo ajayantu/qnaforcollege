@@ -16,11 +16,11 @@ export default function Login() {
             [e.target.name]: e.target.value
         })
     }
-    const handleLogin = (e) => {
+    const handleLogin = async (e) => {
         if (userInfo.email.length > 1 && userInfo.password.length >= 5) {
             e.preventDefault();
-            login(userInfo.email, userInfo.password);
-            navigate("/questions");
+            await login(userInfo.email, userInfo.password);
+            navigate("/questions/1");
         }
     }
     return (

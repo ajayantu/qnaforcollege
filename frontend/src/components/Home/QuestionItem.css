@@ -13,6 +13,7 @@
     background-color: #fff;
     padding: 20px;
     margin: 0 10px;
+    margin-top: 10px;
 }
 .question-header h1{
     font-size: 27px;
@@ -72,6 +73,7 @@
     align-items: center;
 }
 .card-footer .author a img{
+    width: 100%;
     margin-top: 15px;
     border: 2px solid #407cf7;
     padding: 2px;
@@ -95,6 +97,7 @@
 }
 .card-footer .author .author-thumb{
     width: 50px;
+    height: 50px;
 
 }
 .card .card-block .card-text{
@@ -170,8 +173,29 @@
         padding: 4px 4px;
     }
 }
+@media only screen and (max-width: 300px) {
+    .question-header h1{
+        font-size: 1.1rem;
+    }
+    .contents .question-header{
+        padding: 10px;
+    }
+    
+}
 @media only screen and (max-width: 350px) {
     .question-header h1{
-        font-size: 1.3rem;
+        font-size: 1.2rem;
     }
+    
 }
+@media only screen and (max-width: 380px) {
+    .card-block .answer-content .answer-btn p,i{
+        font-size: 0.9rem;
+    }
+    .card .card-block .answer-content .ans-num span{
+        font-size: 0.85rem;
+        
+    }
+    
+}
+

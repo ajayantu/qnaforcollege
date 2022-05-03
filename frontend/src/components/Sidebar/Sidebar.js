@@ -1,8 +1,19 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import { React,useContext } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
 import './Sidebar.css'
-
+import questionContext from "../../context/Question"
 export default function Sidebar() {
+    const navigate = useNavigate();
+    const { setPage } = useContext(questionContext);
+    const handleSidebarQstn = ()=>{
+        navigate(`/questions/${1}`)
+        setPage(1);
+        const sidebar = document.querySelector(".sidebar");
+        const visibility = sidebar.getAttribute('data-visible');
+        if (visibility === "true") {
+            sidebar.setAttribute("data-visible", false);
+        }
+    }
     const handleSidebar = () => {
         const sidebar = document.querySelector(".sidebar");
         const visibility = sidebar.getAttribute('data-visible');
@@ -14,13 +25,13 @@ export default function Sidebar() {
         <>
             <div className="sidebar" data-visible="false">
                 <div className="sidebar-content">
-                    <Link to="/home" id={window.location.pathname === "/home"?"selected-sidemenu":""} onClick={handleSidebar} className="side-menu">
+                    <Link to="/" id={window.location.pathname === "/home"?"selected-sidemenu":""} onClick={handleSidebar} className="side-menu">
                         <div className="side-menu-item">
                             <i className="fas fa-home"></i>
                             <p>Home</p>
                         </div>
                     </Link>
-                    <Link to="/questions" id={window.location.pathname === "/questions"?"selected-sidemenu":""} onClick={handleSidebar} className="side-menu">
+                    <Link to={`/questions/${1}`} id={window.location.pathname.includes("/questions/")?"selected-sidemenu":""} onClick={handleSidebarQstn} className="side-menu">
                         <div className="side-menu-item">
                             <i className="fas fa-globe-asia"></i>
                             <p>Questions</p>

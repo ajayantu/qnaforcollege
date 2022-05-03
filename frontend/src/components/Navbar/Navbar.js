@@ -65,7 +65,7 @@ export default function Navbar() {
                                 <div className="dropdown-list" data-visible="false" >
                                     <i className="fas fa-caret-down"></i>
                                     <div className="dropdown-list-item"><a href="/">Profile</a></div>
-                                    <div className="dropdown-list-item"><a href="/questions" onClick={handleLogout}>Logout</a></div>
+                                    <div className="dropdown-list-item"><a href="/questions/1" onClick={handleLogout}>Logout</a></div>
                                 </div>
                             </div>
                         }

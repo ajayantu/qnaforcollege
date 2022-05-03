@@ -48,7 +48,7 @@ export default function QuestionItem(props) {
                 </div>
                 <div className="card-footer">
                     <div className="author">
-                        <Link to={`/user/${props.qstn.user._id}`}><img className="author-thumb" src={user_icon} alt="user" /></Link>
+                        <Link to={`/user/${props.qstn.user._id}`}><img className="author-thumb" src={props.qstn.user.profile_pic?props.qstn.user.profile_pic:user_icon} alt="user" /></Link>
                         <span className="author-details">
                             <span className="author-name"><Link to={`/user/${props.qstn.user._id}`}>{props.qstn.user.username}</Link></span>
                             <span className="author-badge" style={badgeStyle}>{fullBadge.badge}</span>

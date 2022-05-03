@@ -3,7 +3,7 @@ import QuestionContext from './Question'
 import axios from 'axios'
 
 export default function QuestionStates(props) {
-    const host = 'https://qnaforcollege.herokuapp.com/api';
+    const host = 'http://localhost:5000/api';
     const [isLogin, setIsLogin] = useState(localStorage.getItem("token") ? true : false);
     const [questions, setQuestions] = useState([]);
     const [userQstns, setUserQstns] = useState([]);
@@ -18,7 +18,20 @@ export default function QuestionStates(props) {
     let count = 0;
     const [notifyCount, setNotifyCount] = useState(0);
     const [progress, setProgress] = useState(0);
-
+    const [page,setPage] = useState(1);
+    const [pages,setPages] = useState(0)
+    const [loading,setLoading] = useState(false)
+    
+    const uploadProfilePic = async (data)=>{
+        setProgress(10);
+       const res =  await axios.post(`${host}/updatepic`,data,{
+            headers:{
+                'auth_token': localStorage.getItem("token")
+            }
+        })
+        setProgress(100);
+        return res.data.url;
+    }
     const signup = async (username, email, password) => {
         setProgress(10)
         const res = await axios.post(`${host}/signup`, { username, email, password })
@@ -38,16 +51,20 @@ export default function QuestionStates(props) {
         }
     }
 
-    const fetchQstns = async () => {
+    const fetchQstns = async (fetch_page) => {
+        setLoading(true);
         setProgress(10)
-        const res = await axios.get(`${host}/getqstn`, {
+        const res = await axios.get(`${host}/getqstn?page=${fetch_page}`, {
             headers: {
                 'auth_token': localStorage.getItem("token")
             },
         })
         setProgress(50)
         setQuestions(res.data.questions);
+        setPages(res.data.pages)
+        setPage(res.data.page)
         setProgress(100)
+        setLoading(false)
     }
 
     const fetchStudents = async () => {
@@ -249,7 +266,7 @@ export default function QuestionStates(props) {
 
 
     const qstnValues = {
-        fetchQstns, questions, answers, setAnswers, fetchAnswer, addAnswer, fetchUser, user, role, fetchNotify, notifyCount, editNotify, notify, fetchUserQstns, userQstns, fetchUserAnsQstn, userAnsQstns, progress, students, fetchStudents, setQstnId, setUserId, handleAsk, findBadge, login, isLogin, setIsLogin, signup
+        fetchQstns, questions, answers, setAnswers, fetchAnswer, addAnswer, fetchUser, user,setUser,role, fetchNotify, notifyCount, editNotify, notify, fetchUserQstns, userQstns, fetchUserAnsQstn, userAnsQstns, progress, students, fetchStudents, setQstnId, setUserId, handleAsk, findBadge, login, isLogin, setIsLogin, signup,uploadProfilePic,page,setPage,pages,setPages,setQuestions,loading,setLoading
     }
     return (
         <QuestionContext.Provider value={qstnValues}>

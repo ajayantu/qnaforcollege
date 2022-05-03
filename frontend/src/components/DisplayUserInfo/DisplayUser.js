@@ -1,24 +1,44 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext, useEffect,useState } from 'react'
 import { useParams } from 'react-router-dom';
 import QuestionContext from '../../context/Question'
 import './DisplayUser.css'
+import icon from './user icon.png';
 
 export default function DisplayUser() {
 
-    const { fetchUser,user,role } = useContext(QuestionContext);
+    const { fetchUser,user,role,setUser,uploadProfilePic } = useContext(QuestionContext);
     const { userId } = useParams();
-    
+    const [singleFile,setSingleFile] = useState(null);
 
+    const singleFileChange = (e)=>{
+        setSingleFile(e.target.files[0])
+    }
+    const uploadSingleFile = async (e)=>{
+        e.preventDefault();
+        const formData = new FormData();
+        formData.append('profileImg',singleFile)
+        const url = await uploadProfilePic(formData);
+        setUser({...user,profile_pic:url})
+
+    }
     useEffect(()=>{
         fetchUser(userId);
+        return ()=>{
+            setUser({})
+        }
         // eslint-disable-next-line
     },[])
 
     return (
         <>
             <div className="user_container">
+            
                 <div className="user_details">
-                <div className="user_icon"><i className="fas fa-user"></i></div>
+                <div className="user_icon"><img src={user.profile_pic?user.profile_pic:icon} alt="" /></div>
+                <form className="pic_form" action="http://localhost:5000/api/updatepic" encType="multipart/form-data" method='POST'>
+                    <input type="file" name="profileImg" onChange={singleFileChange} />
+                    <button type="submit" onClick={uploadSingleFile}>Update</button>
+                </form>
                     <pre>
                     <span>Username                     :    {user?user.username:""}</span>
                     <span>Role                                :    {user?role:""}</span>

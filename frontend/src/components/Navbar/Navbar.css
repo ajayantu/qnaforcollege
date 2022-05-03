@@ -108,7 +108,6 @@ nav{
     border: 2px solid #009B72;
 }
 .profile-pic .dropdown-list{
-    position: relative;
     min-width: 150px;
     position: absolute;
     top: 50px;
@@ -117,7 +116,6 @@ nav{
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     background-color: #fff;
     color: black;
-    opacity: 0;
     visibility: hidden;
 }
 .profile-pic .dropdown-list[data-visible="true"]{
@@ -167,10 +165,6 @@ nav{
     .profile-pic{
         width: 32px;
         height: 32px;
-    }
-    .sidebar{
-        transform: translateX(-100%);
-        transition: transform 350ms ease-out;
     }
     .questions-container{
         margin:0;

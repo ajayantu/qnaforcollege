@@ -12,7 +12,6 @@ export default function DisplayUserDetail() {
     backgroundColor: fullBadge.color,
     color: "#fff",
 }
-
 useEffect(()=>{
   fetchUser(userId);
   return ()=>{

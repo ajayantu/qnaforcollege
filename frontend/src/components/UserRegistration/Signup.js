@@ -29,9 +29,6 @@ export default function Signup() {
                 })
         }
     }
-    const handleFormChange = ()=>{
-
-    }
     return (
         <>
             <div className="signup-container">

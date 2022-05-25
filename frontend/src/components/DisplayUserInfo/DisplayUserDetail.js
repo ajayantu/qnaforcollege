@@ -1,11 +1,11 @@
-import React, { useEffect,useContext,useState } from 'react'
+import React, { useEffect,useContext } from 'react'
 import icon from './user icon.png';
 import bg from './naturebg.jpg'
 import point from './points_icon.png'
 import questionContext from "../../context/Question"
 import { useParams } from 'react-router-dom';
 export default function DisplayUserDetail() {
-  const { fetchUser,user,role,setUser,findBadge } = useContext(questionContext);
+  const { fetchUser,user,setUser,findBadge } = useContext(questionContext);
   const { userId } = useParams();
   const fullBadge = findBadge(user.badge);
   const badgeStyle = {

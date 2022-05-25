@@ -1,7 +1,7 @@
 import React from 'react'
 import './Pagination.css'
 import { useNavigate, useParams, useLocation } from 'react-router-dom'
-export default function Pagination({page,pages,changePage}) {
+export default function Pagination({pages,changePage}) {
     const location = useLocation();
     let pgno = location.pathname.includes("questions")?parseInt(window.location.pathname.split("/questions/")[1]):1
     const { pageNum } = useParams();

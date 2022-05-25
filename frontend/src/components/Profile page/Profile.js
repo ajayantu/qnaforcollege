@@ -1,4 +1,4 @@
-import React, { useEffect,useContext,useState } from 'react'
+import React, { useContext,useState } from 'react'
 import './Profile.css'
 import user from './user.png';
 import bg from './naturebg.jpg'

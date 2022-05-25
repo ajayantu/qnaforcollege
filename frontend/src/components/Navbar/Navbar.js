@@ -6,7 +6,7 @@ import icon from './user-icon.png';
 import { Link } from "react-router-dom";
 
 export default function Navbar() {
-    const { setNotify,notify,fetchNotify, notifyCount, editNotify, isLogin, setIsLogin,fetchProfile,setProfile,profile } = useContext(questionContext);
+    const { fetchNotify, notifyCount, editNotify, isLogin, setIsLogin,fetchProfile,setProfile,profile } = useContext(questionContext);
     let navigate = useNavigate();
     const handleLogout = () => {
         setIsLogin(false)

@@ -44,11 +44,11 @@ export default function UpdateQstn() {
               </div>
               <div className="visibility_details">
                 <span className="v_title">Visibility</span>
-                <input type="radio" id="public" name="visibility" checked={qstnDetails.visibility==3?true:false} value={3} required onChange={handleFormChange} />
+                <input type="radio" id="public" name="visibility" checked={qstnDetails.visibility===3?true:false} value={3} required onChange={handleFormChange} />
                 <label htmlFor="public">Public</label><br />
-                <input type="radio" id="teachers_only" name="visibility" checked={qstnDetails.visibility==1?true:false} value={1} required onChange={handleFormChange} />
+                <input type="radio" id="teachers_only" name="visibility" checked={qstnDetails.visibility===1?true:false} value={1} required onChange={handleFormChange} />
                 <label htmlFor="teachers_only">Teachers</label><br />
-                <input type="radio" id="students_only" name="visibility" checked={qstnDetails.visibility==0?true:false} value={0} required onChange={handleFormChange} />
+                <input type="radio" id="students_only" name="visibility" checked={qstnDetails.visibility===0?true:false} value={0} required onChange={handleFormChange} />
                 <label htmlFor="students_only">Students</label>
               </div>
               <button type='submit' className='submit_btn_qstn' onClick={handleSubmitQstn}>Update</button>

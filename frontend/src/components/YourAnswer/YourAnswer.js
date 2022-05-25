@@ -10,6 +10,7 @@ export default function YourAnswer() {
         // eslint-disable-next-line
         return ()=>{
             setUserAnsQstns([])
+            // eslint-disable-next-line
         }
     }, [])
     return (

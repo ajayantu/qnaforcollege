@@ -2,7 +2,6 @@ import Home from "./components/Home/Home";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Answers from "./components/Answer/Answers";
 import Navbar from './components/Navbar/Navbar'
-import DisplayUser from "./components/DisplayUserInfo/DisplayUser";
 import Notification from "./components/Notification/Notification";
 import Sidebar from "./components/Sidebar/Sidebar"
 import YourQstn from "./components/yourQuestions/YourQstn";
@@ -15,7 +14,6 @@ import Login from "./components/UserRegistration/Login";
 import Signup from "./components/UserRegistration/Signup";
 import ErrorPage from "./components/Error Page/ErrorPage";
 import AskQstn from "./components/Ask Question/AskQstn";
-import Profile from "./components/Profile page/Profile";
 import Teachers from "./components/Users/Teachers";
 import UpdateQstn from "./components/UpdateQstn/UpdateQstn";
 import Alert from "./components/Alerts/Alert";

@@ -3,7 +3,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import questionContext from "../../context/Question"
 import { CKEditor } from '@ckeditor/ckeditor5-react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
-import { useNavigate,useParams,useLocation } from 'react-router-dom'
+import { useNavigate,useParams } from 'react-router-dom'
 import './Answers.css'
 import QuestionShow from './QuestionShow';
 import Spinner from '../Spinner/Spinner';

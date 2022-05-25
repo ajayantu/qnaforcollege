@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom'
 
 export default function AskUserItem(props) {
     let navigate = useNavigate();
-    const { setUserId,findBadge,isLogin } = useContext(questionContext);
+    const { setUserId,findBadge } = useContext(questionContext);
     const fullBadge = findBadge(props.askuser.badge);
     const badgeStyle = {
         backgroundColor: fullBadge.color,

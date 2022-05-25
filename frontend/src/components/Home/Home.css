@@ -6,6 +6,9 @@ body{
 .questions-container{
     margin-left: 15rem;
 }
+.contents .content-container .no_questions{
+    text-align: center;
+}
 .display{
     margin: 20px;
 }

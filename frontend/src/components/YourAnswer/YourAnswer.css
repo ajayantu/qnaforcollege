@@ -1,9 +1,14 @@
-.user-ans-qstn{
+.user-questions-container{
     margin-left: 15rem;
+    padding: 8px;
 }
-
+.user-questions-container .no_answered_qstn{
+    text-align: center;
+    margin-top: 10px;
+    color: rgb(40, 40, 41);
+}
 @media only screen and (max-width: 850px) {
-    .user-ans-qstn{
+    .user-questions-container{
         margin-left: 0;
     }
 

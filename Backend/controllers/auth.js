@@ -18,7 +18,7 @@ exports.signup = async (req,res)=>{
         if (user1) {
             return res.json({
                 status:"error",
-                message:"user with this email already exists"
+                message:"User with this email already exists"
             })
         }
         
@@ -28,7 +28,7 @@ exports.signup = async (req,res)=>{
         if (user2) {
             return res.json({
                 status:"error",
-                message:"username already taken"
+                message:"Username already taken"
             })
         }
 
@@ -38,6 +38,7 @@ exports.signup = async (req,res)=>{
             username:req.body.username,
             email:req.body.email,
             hash_password : hashPass,
+            role:req.body.role
         });
         user.save()
         .then(()=>{
@@ -46,10 +47,7 @@ exports.signup = async (req,res)=>{
         .catch((err)=>{
             return res.send({status:"error",message:"signup unsuccessfull"})
         })
-        const curr = new CurrNotify({
-            user:user._id,
-        })
-        curr.save();
+
         
     }catch(err){
         return res.status(500).json({
@@ -82,14 +80,9 @@ exports.signin = async (req,res)=>{
             //generate auth token
             const token = jwt.sign({_id:user._id},process.env.SECRET)
             
-            //setting token to cookie
-            // res.cookie("token",token,{
-            //     domain:"localhost:3000",
-            //     maxAge:60*60*24*30*1000
-            // });
 
             //sending token to the user
-            return res.json({status:"ok",token})
+            return res.json({status:"ok",token,user:user})
             
 
     }catch(err){

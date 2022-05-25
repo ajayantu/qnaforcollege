@@ -12,7 +12,7 @@ exports.addAnswer = async (req,res)=>{
     }
     try{
 
-        const user = await User.findById(req.user._id,{role:1,ans:1,points:1,username:1});
+        const user = await User.findById(req.user._id,{role:1,ans:1,points:1,username:1,profile_pic:1});
         const qstn = await Question.findOne({_id:req.params.qstnId});
         if(!qstn){
             return res.json({status:"error",message:"Question not found"})
@@ -28,14 +28,14 @@ exports.addAnswer = async (req,res)=>{
             return res.json({status:"error",message:"Access denied"})
         }
 
-        const ans = new Answer({
+        let ans = new Answer({
             user:req.user._id,
             question:req.params.qstnId,
             answer:req.body.answer
         })
     
-        ans.save();
-
+        ans.save().then(ans => ans.populate('user'));
+        
         user.ans = user.ans+1;
         user.points = user.points+15;
         user.badge = badge;
@@ -50,7 +50,8 @@ exports.addAnswer = async (req,res)=>{
             user:qstn.user,
             title:str,
             // question:qstn.title,
-            qstn:qstn._id
+            qstn:qstn._id,
+            user_profile:user.profile_pic
         })
         await not.save();
     
@@ -72,7 +73,7 @@ exports.getAnswer = async (req,res)=>{
             if(qstn.visibility !== 3 && qstn.visibility !== user.role && user.role !== 3){
                 return res.json({status:"error",message:"Access denied"})
             }
-            const answers = await Answer.find({question:req.params.qstnId})
+            const answers = await Answer.find({question:req.params.qstnId}).populate('user','username badge profile_pic')
             return res.json({status:"ok",answers:answers}); 
     
         }catch(err){
@@ -83,7 +84,7 @@ exports.getAnswer = async (req,res)=>{
         if(qstn.visibility !== 3){
             return res.json({status:"error",message:"Access denied"})
         }
-        const answers = await Answer.find({question:req.params.qstnId})
+        const answers = await Answer.find({question:req.params.qstnId}).populate('user','badge profile_pic username')
         return res.json({status:"ok",answers:answers});
     }
     
@@ -123,7 +124,10 @@ exports.deleteAnswer = async (req,res)=>{
             return res.json({status:"error",message:"Access denied"});
         } 
         const delans =  await Answer.findByIdAndDelete(req.params.ansId);
-        await Question.updateOne({_id:ans.question._id},{$inc:{ansnumber:-1}});
+        await Question.updateOne({_id:ans.question._id},{$inc:{ansnumber:-1},$pullAll: {
+            answeredby: [req.user._id],
+        }});
+        await User.updateOne({_id:req.user._id},{$inc:{ans:-1}})
         return res.json({status:"ok",deletedans:delans});
 
     }catch(err){
@@ -132,7 +136,6 @@ exports.deleteAnswer = async (req,res)=>{
 }
 
 exports.getUserAnswer = async (req,res)=>{
-    const ans = await Answer.find({user:req.user._id},{createdAt:0,updatedAt:0}).populate('question');
-
-    res.json({status:"ok",answers:ans});
+    const ans = await Answer.find({user:req.user._id}).sort({updatedAt:-1}).populate({path:'question',populate:{path:'user',select:'username profile_pic'}})
+    return res.json({status:"ok",answers:ans});
 }

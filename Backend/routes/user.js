@@ -1,6 +1,6 @@
 const express = require('express');
 const { isSignedIn } = require('../controllers/auth');
-const { getUser,getStudents,picUpload,updatePic } = require('../controllers/user')
+const { getUser,getStudents,updatePic,getProfile,getTeachers } = require('../controllers/user')
 const router = express.Router();
 const multer = require('multer');
 const { v4: uuidv4 } = require('uuid')
@@ -28,9 +28,10 @@ var upload = multer({
     }
 });
 
+
 router.get('/getuser/:userId',getUser);
-
-router.get('/getstud',isSignedIn,getStudents);
-
+router.get('/getstud',getStudents);
+router.get('/getteach',getTeachers);
 router.post('/updatepic',isSignedIn,upload.single('profileImg'),updatePic);
+router.get('/getprofile',isSignedIn,getProfile)
 module.exports = router;

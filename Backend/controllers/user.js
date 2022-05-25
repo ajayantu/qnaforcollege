@@ -1,6 +1,19 @@
 const User = require('../models/user');
 const fs = require('fs');
-
+exports.getProfile = async(req,res)=>{
+    try{
+        const user = await User.findById(req.user._id);
+        if(user)
+        {
+            return res.json({status:"ok",user:user});
+        }
+        else{
+            return res.json({status:"error"})
+        }
+    }catch(err){
+        return res.json({status:"error",message:err.message})
+    }
+}
 exports.updatePic = async (req,res)=>{
     const url = req.protocol + '://' + req.get('host');
     const finalUrl = url + '/public/' + req.file.filename;
@@ -14,6 +27,7 @@ exports.updatePic = async (req,res)=>{
         user.save();
         const realpath = "public/"+pathh.split("public")[1]
         if(fs.existsSync(realpath)){
+            console.log("The path exists and can be deleted");
             fs.unlink(realpath, (err) => {
                 if (err) {
                 console.error(err);
@@ -24,7 +38,7 @@ exports.updatePic = async (req,res)=>{
         }
         else
         {
-            return res.json({status:"success",url:finalUrl});
+            return res.json({staus:"error"});
         }
     }
     else
@@ -57,6 +71,14 @@ exports.getStudents = async (req,res)=>{
     try{
         const users = await User.find({role:0}).sort({createdAt:-1});
         return res.json({status:"ok",students:users});
+    }catch(err){
+        return res.json({status:"error",message:err.message})
+    }
+}
+exports.getTeachers = async (req,res)=>{
+    try{
+        const teachers = await User.find({role:1}).sort({createdAt:-1});
+        return res.json({status:"ok",teachers});
     }catch(err){
         return res.json({status:"error",message:err.message})
     }

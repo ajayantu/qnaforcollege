@@ -1,9 +1,3 @@
-.dpm{
-    padding: 20px;
-    margin: 5px;
-    border: 2px solid #dee0e1;
-    background-color: #fff;
-}
 .ans-item ul,ol{
     display: block;
     margin-block-start: 1em;
@@ -64,15 +58,73 @@
     min-width: 50%;
 }
 
-.answer-container{
+.answer_main_container .answer_question_details{
+    background: #fff;
+    padding: 15px;
+    border-radius: 5px;
+    
+}
+.answer_main_container .answers_bar{
+    background-color: rgba(208, 202, 202, 0.6);
+    padding: 20px;
+    /* border-radius: 5px; */
+}
+.answers_bar .bar_details span{
+    font-size: 0.9rem;
+    text-align: center;
+    margin-left: 10px;
+}
+.answer_main_container .answers_bar .bar_details{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    outline-color: rgb(40, 40, 41);
+    border-radius: 5px;
+    padding: 7px;
+    max-width: 130px;
+    text-align: center;
+    color: rgb(40, 40, 41);
+}
+.answer_question_details .qstn_title{
+    font-size: 19px;
+    color: rgb(39, 41, 48);
+    margin-bottom: 15px;
+}
+.answer_question_details .author_details img{
+    width: 43px;
+    height: 43px;
+    border-radius: 50%;
+    border: 2px solid rgb(45, 111, 247);
+    padding: 2px;
+    margin-top: 8px;
+    margin-right: 10px;
+}
+.answer_question_details .author_details{
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+.answer_question_details .author_details .author_badge{
+    padding: 2px 5px;
+    font-size: 12px;
+    text-align: center;
+
+}
+.answer_main_container{
     margin-left: 15rem;
     padding: 5px;
 }
-.answer-container .addAnswer{
-    margin: 0.3rem;
+.answer_question_details .qstn_description{
+    color: rgb(39, 41, 48);
+    font-size: 15px;
+    /* font-family: roboto, Arial, sans-serif; */
 }
+
 .answer-container .addAnswer h2{
-    margin: 25px 0;
+    margin-bottom: 10px;
+    color: rgb(39, 41, 48);
+    font-size: 1.3rem;
 }
 .editor-container .ck .ck .ck-content ul{
     display: block;
@@ -98,15 +150,20 @@
     min-width: 200px
 ;
 }
+.addAnswer{
+    background-color: #fff;
+    padding: 10px;
+}
 .btn_submit_ans{
     margin-top: 20px;
-    background-color: #555555;
-    border: none;
+    background-color: rgb(10, 149, 255);
     color: white;
-    padding: 10px 25px;
+    padding: 4px 18px;
+    border: 1px solid transparent;
+    border-radius: 5px;
     text-align: center;
     text-decoration: none;
-    font-size: 16px;
+    font-size: 15px;
     cursor: pointer;
 }
 .answer-container .no-items-text{
@@ -115,7 +172,7 @@
 }
 
 @media only screen and (max-width: 850px) {
-    .answer-container{
+    .answer_main_container{
         margin-left: 0;
     }
 

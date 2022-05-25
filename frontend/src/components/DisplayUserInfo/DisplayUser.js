@@ -15,12 +15,11 @@ export default function DisplayUser() {
     }
     const uploadSingleFile = async (e)=>{
         e.preventDefault();
-        if (singleFile!==null) {
-            const formData = new FormData();
-            formData.append('profileImg',singleFile)
-            const url = await uploadProfilePic(formData);
-            setUser({...user,profile_pic:url})
-        }
+        const formData = new FormData();
+        formData.append('profileImg',singleFile)
+        const url = await uploadProfilePic(formData);
+        setUser({...user,profile_pic:url})
+
     }
     useEffect(()=>{
         fetchUser(userId);
@@ -36,7 +35,7 @@ export default function DisplayUser() {
             
                 <div className="user_details">
                 <div className="user_icon"><img src={user.profile_pic?user.profile_pic:icon} alt="" /></div>
-                <form className="pic_form" encType="multipart/form-data">
+                <form className="pic_form" action="http://localhost:5000/api/updatepic" encType="multipart/form-data" method='POST'>
                     <input type="file" name="profileImg" onChange={singleFileChange} />
                     <button type="submit" onClick={uploadSingleFile}>Update</button>
                 </form>

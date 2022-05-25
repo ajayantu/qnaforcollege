@@ -7,7 +7,13 @@ exports.getNotify = async (req,res)=>{
     try{
         const notify = await Notify.find({user:req.user._id}).populate('qstn').sort({createdAt:-1}).limit(10);
         const curr = await CurrNotify.findOne({user:req.user._id});
-        return res.json({status:"ok",notify:notify,current:curr});
+        if(curr)
+        {
+            return res.json({status:"ok",notify:notify,current:curr.current});
+        }
+        else{
+            return res.json({status:"ok",notify:notify,current:null});
+        }
     }catch(err){
         return res.json({status:"error",message:err.message});
     }
@@ -17,9 +23,16 @@ exports.editNotify = async (req,res)=>{
     try{
         const notif = await CurrNotify.findOne({user:req.user._id});
         if(!notif){
-            return res.json({status:"error",message:"notify not found"});
+            // return res.json({status:"error",message:"notify not found"});
+            const curr = new CurrNotify({
+                user:req.user._id,
+                current:req.body.current
+            })
+            curr.save();
         }
-        await CurrNotify.updateOne({user:req.user._id},{$set:{current:req.body.current}});
+        else{
+            await CurrNotify.updateOne({user:req.user._id},{$set:{current:req.body.current}});
+        }
         return res.json({status:"ok",message:"updating success"});
     }catch(err){
         return res.json({status:"error",message:err.message});

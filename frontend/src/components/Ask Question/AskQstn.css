@@ -1,0 +1,70 @@
+#root .askqstn_container{
+    margin-left: 15rem;
+    display: flex;
+    height: 90vh;
+    justify-content: center;
+    align-items: center;
+    background:linear-gradient(135deg,#71b7e6,#9b59b6);
+    padding: 10px;
+}
+.askqstn_elements{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 500px;
+    width: 100%;
+    background: #fff;
+    padding: 25px 30px;
+    border-radius: 5px;
+}
+.askqstn_container .askqstn_elements .title{
+    font-size: 25px;
+    font-weight: 500;
+}
+.askqstn_elements form .input_box input,.askqstn_elements form .input_box textarea{
+    height: 40px;
+    width: 100%;
+    padding: 2px 5px;
+    outline: none;
+}
+.askqstn_elements form .input_box{
+    margin-top: 10px;
+}
+.askqstn_elements form .input_box span,.askqstn_elements form .visibility_details span{
+    font-size: 0.9rem;
+    margin-bottom: 6px;
+}
+.askqstn_elements form .input_box input:focus,
+.askqstn_elements form .input_box textarea:focus{
+    border:2px solid #9b59b6;
+}
+.visibility_details label{
+    font-size: 0.9rem;
+    margin-left: 10px;
+}
+.visibility_details .v_title{
+    margin: 8px 0;
+}
+.askqstn_elements form .input_box textarea{
+    resize: none;
+    height: 100px;
+}
+.askqstn_elements form .visibility_details{
+    margin-top: 5px;
+}
+.askqstn_elements form .submit_btn_qstn{
+    color: #fff;
+    font-weight: 500;
+    background: #009DDC;
+    width: 100%;
+    border: none;
+    padding: 5px 0;
+    margin-top: 12px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+@media(max-width:850px){
+    #root .askqstn_container{
+        margin: 0;
+    }
+}

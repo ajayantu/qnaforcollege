@@ -1,5 +1,6 @@
 const Question = require('../models/question');
 const User = require('../models/user');
+const Answer = require('../models/answer');
 const { validationResult } = require('express-validator');
 const { findBadge } = require('../Helper/Badgehelper');
 
@@ -34,7 +35,7 @@ exports.addQstn = async (req,res)=>{
 
 exports.getUserQstns = async (req,res)=>{
     try{
-        const qstns = await Question.find({user:req.user._id},{ title:1, description:1, ansnumber:1, createdAt:1, updatedAt:1, user:1 });
+        const qstns = await Question.find({user:req.user._id},{ title:1, description:1, ansnumber:1, createdAt:1, updatedAt:1, user:1,visibility:1 }).populate('user','username badge profile_pic').sort({updatedAt:-1});
         res.json({status:"ok",question:qstns});
     }catch(err){
         return res.json({status:"error",message:"server error"});
@@ -118,11 +119,20 @@ exports.deleteQuestion = async (req,res)=>{
             return res.json({status:"error",message:"Access denied"});
         }
         
+        await Answer.deleteMany({question:qstn._id})
         await Question.findByIdAndDelete(req.params.qstnId);
-        res.json({status:"ok",message:"Deleted successfully"});
+        return res.json({status:"ok",message:"Deleted successfully"});
     }catch(err){
         return res.json({status:"error",message:"some error occured"});
     }
 
     
+}
+exports.getQstn = async(req,res)=>{
+    try{
+        const qstn = await Question.findOne({_id:req.params.qstnId},{title:1,description:1,user:1,ansnumber:1}).populate('user','username profile_pic badge')
+        return res.json({status:"ok",qstn:qstn})
+    }catch(err){
+        return res.json({status:"error",message:"some error occuredddd"});
+    }
 }

@@ -3,11 +3,11 @@ import './Navbar.css'
 import questionContext from "../../context/Question"
 import { useNavigate } from 'react-router-dom';
 import icon from './user-icon.png';
+import { Link } from "react-router-dom";
 
 export default function Navbar() {
-    const { fetchNotify, notifyCount, editNotify, isLogin, setIsLogin } = useContext(questionContext);
+    const { setNotify,notify,fetchNotify, notifyCount, editNotify, isLogin, setIsLogin,fetchProfile,setProfile,profile } = useContext(questionContext);
     let navigate = useNavigate();
-
     const handleLogout = () => {
         setIsLogin(false)
         localStorage.clear("token");
@@ -45,7 +45,11 @@ export default function Navbar() {
     }
     useEffect(() => {
         isLogin && fetchNotify();
+        isLogin && fetchProfile();
         // eslint-disable-next-line
+        return ()=>{
+            setProfile([])
+        }
     }, [isLogin])
     return (
         <>
@@ -54,17 +58,17 @@ export default function Navbar() {
                     <i className="fas fa-bars menu-bar" data-visible="false" onClick={handleSidebar}></i>
                     <h1 className="logo">QCollege</h1>
                     <div className="menu-items">
-                        <a href="/">Home</a>
-                        <a href="/">About</a>
-                        <a href="/">Contact</a>
+                        <i className="fas fa-home"></i>
+                        <Link to="/questions/1">Home</Link>
+                        <Link to="/about">About</Link>
                     </div>
                     <div className="right-content">
                         {isLogin &&
                             <div className="profile-pic" onClick={handleUserDropdown}>
-                                <img src={icon} alt="" />
+                                <img src={profile?profile.profile_pic:icon} alt="" />
                                 <div className="dropdown-list" data-visible="false" >
                                     <i className="fas fa-caret-down"></i>
-                                    <div className="dropdown-list-item"><a href="/">Profile</a></div>
+                                    <div className="dropdown-list-item"><Link to="/profile">Profile</Link></div>
                                     <div className="dropdown-list-item"><a href="/questions/1" onClick={handleLogout}>Logout</a></div>
                                 </div>
                             </div>
@@ -79,7 +83,6 @@ export default function Navbar() {
                         }
 
                         <div className="right-buttons">
-                            {/* {isLogin && <button onClick={handleLogout}>Logout</button>} */}
                             {!isLogin &&
                                 <>
                                     <button onClick={handleLogin} className='login-btn'>Login</button>

@@ -1,0 +1,15 @@
+.dpm{
+    margin-bottom: 5px;
+    background-color: #fff;
+    border-radius: 5px;
+}
+.author_details .author_details_nb .author_username{
+    font-size: 14px;
+    font-weight: bold;
+}
+.author_details .del_btn{
+    margin-left: auto;
+    position: relative;
+    top: -15px;
+    cursor: pointer;
+}

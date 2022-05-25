@@ -1,10 +1,67 @@
 .user-question{
-    margin-left: 15rem;
+    background-color: #fff;
+    margin-bottom: 1px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    padding: 24px;
 }
-
-@media only screen and (max-width: 850px) {
-    .user-question{
-        margin-left: 0;
+.user-question .user_details{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+.user-questions-container .no_asked_qstn{
+    text-align: center;
+    margin-top: 10px;
+    color: rgb(40, 40, 41);
+}
+.user-question .user_details .control_options{
+    display: flex;
+    gap: 10px;
+    margin-left: auto;
+}
+.user-question .user_details .control_options i{
+    cursor: pointer;
+}
+.user-question .user_details img{
+    width: 43px;
+    height: 43px;
+    border-radius: 50%;
+    border: 2px solid rgb(45, 111, 247);
+    padding: 2px;
+}
+.user-question .user_details h2{
+    font-size: 13px;
+}
+.user-question .user_details span{
+    font-size: 12px;
+}
+.user-question .question_details p{
+    margin-top: 6px;
+}
+.question_details a{
+    text-decoration: none;
+}
+.question_details a h2{
+    color: rgb(40, 40, 41);
+    font-size: 15px;
+}
+.question_details a h2:hover{
+    text-decoration: underline;
+}
+.question_details p{
+    font-size: 14px;
+}
+.option_icon{
+    margin-left: auto;
+    cursor: pointer;
+    color: rgba(0, 0, 0, 0.674);
+}
+@media only screen and (max-width: 500px) {
+    .question_details a h2{
+        font-size: 14px;
     }
-
+    .question_details p{
+        font-size: 13px;
+    }
 }

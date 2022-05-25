@@ -1,0 +1,24 @@
+.about_container{
+    margin-left: 15rem;
+}
+.about_container .about_text{
+    font-size: 15px;
+    padding: 20px;
+}
+.about_container .about_title hr{
+    width: 96%;
+    margin: auto;
+}
+.about_container .about_title span{
+    font-size: 1.5rem;
+    font-weight: 500;
+    padding: 20px;
+}
+@media(max-width:850px){
+    .about_container{
+        margin-left: 0;
+    }
+    .about_container .about_title hr{
+        width: 90%;
+    }
+}

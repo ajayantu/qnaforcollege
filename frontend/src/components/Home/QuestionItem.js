@@ -18,7 +18,6 @@ export default function QuestionItem(props) {
         const token = localStorage.getItem('token');
         if (!token) {
             e.preventDefault();
-            console.log("Please login first");
             navigate("/login");
 
         }

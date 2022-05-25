@@ -1,0 +1,161 @@
+.profile_main{
+    padding: 3px;
+    height: 93vh;
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: center;
+    align-items: center;
+    margin-left: 15rem;
+    flex-wrap: wrap;
+    gap: 35px;
+}
+.profile_card{
+    margin: 10px;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 0 30px rgba(0,0,0,0.5);
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    max-width: 100%;
+}
+.profile_card .profile_pic img{
+    position: relative;
+    top: -60px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    z-index: 1;
+    border: 4px solid #fff;
+}
+.profile_card .user_name_badge{
+    position: relative;
+    top: -60px;
+}
+.profile_card .user_name_badge .username{
+    font-size: 1.2rem;
+    text-align: center;
+}
+.profile_card .user_name_badge .author-badge{
+    text-align: center;
+    width: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5px;
+    font-size: 0.9rem;
+}
+.profile_card .line{
+    text-align: center;
+    width: 200px;
+    height: 1px;
+    background: rgba(88, 88, 88, 0.438);
+    border: none;
+    margin: auto;
+    margin-bottom: 20px;
+}
+.profilebg img{
+    border-radius: 8px;
+
+    height: 150px;
+    width: 100%;
+}
+.profile_details {
+    display: flex;
+    justify-content: center;
+}
+.profile_details table td{
+    padding: 3px;
+}
+.points_details .points_amount{
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #555;
+}
+.profile_details{
+    position: relative;
+    top: -20px;
+    padding: 10px;
+    text-align: center;
+}
+.points_details{
+    position: relative;
+    top: -30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.points_details img{
+    margin-bottom: 12px;
+    margin-right: 6px;
+    width: 50px;
+}
+
+.update_pic_title{
+    margin-bottom: 10px;
+}
+.update_pic_title span{
+    font-size: 0.8rem;
+}
+.upload_pic_control{
+    width: 100%;
+    max-width: 300px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 2px dotted rgb(155, 152, 152);
+    padding: 8px;
+}
+.upload_pic_control .pic_upload_btn input{
+    display: none;
+}
+.upload_pic_control .pic_upload_btn{
+    display: inline-flex;
+    margin-bottom: 20px;
+    
+}
+.upload_pic_control .pic_upload_btn button,.upload_pic_control .update_btn_pic button{
+    background: #009879;
+    border:2px solid #00745D;
+    outline: none;
+    border-radius: 2px;
+    padding: 0.5em 0.8em;
+    color: #fff;
+    font-size: 0.7rem;
+    cursor: pointer;
+}
+
+.upload_pic_control .pic_upload_btn span{
+    display: inline-flex;
+    white-space: nowrap;
+    font-size: 0.8rem;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    border: 2px solid rgb(186, 186, 186);
+    padding: 3px 4px;
+}
+@media only screen and (max-width: 850px) {
+    .profile_main{
+        margin: 0;
+    }
+}
+@media only screen and (max-width: 500px) {
+    .profile_card{
+        width: 280px;
+    }
+    .upload_pic_control{
+        max-width: 280px;
+    }
+    .points_details .points_amount{
+        font-size: 1.5rem;
+    }
+}
+@media(max-width:630px){
+    .profile_main{
+        gap:10px
+    }
+}

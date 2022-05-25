@@ -1,12 +1,21 @@
 .login-container{
     margin-left: 15rem;
-    height: 90vh;
     display: flex;
-    flex-direction: column;
+    height: 90vh;
     justify-content: center;
     align-items: center;
+    padding: 10px;
+    background:linear-gradient(135deg,#71b7e6,#9b59b6);
 }
-
+.login-elements{
+    max-width: 330px;
+    width: 100%;
+    background: #fff;
+    padding: 25px 30px;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 10px 24px 0px, rgba(0, 0, 0, 0.05);
+    
+}
 .login-elements h1{
     margin-bottom: 15px;
     font-size: 1.7rem;
@@ -18,12 +27,13 @@
     color: hsla(210, 8%, 5%, 1);
     margin-bottom: 10px;
 }
-.login-elements input{
+.login-elements form .login-item input{
+    height: 30px;
     width: 100%;
-    border: 2px solid rgb(221, 217, 217);
-    padding: 0.3em 0.7em;
+    border: 1px solid rgb(186, 191, 196);
+    padding: 7.8px 9.1px;
 }
-.login-elements input:focus{
+.login-elements form .login-item input:focus{
     outline: none;
     border: 2px solid rgb(147, 211, 233);
 }
@@ -33,20 +43,11 @@
     border: none;
     background-color: #009DDC;
     color: #fff;
-    padding: 7px 110px;
+    width: 100%;
+    padding: 7px 0;
+    border-radius: 5px;
 }
-.login-elements{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    max-width: 80%;
-    font-family: sans-serif;
-    background-color: #fff;
-    padding: 29px;
-    box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
-    border-radius: 10px;
-}
+
 
 .login-item{
     width: 100%;
@@ -55,13 +56,7 @@
 
 @media only screen and (max-width: 850px) {
     .login-container{
-        margin-left: 0;
-    }
-
-}
-@media only screen and (max-width: 375px) {
-    .login-elements button{
-        padding: 7px 89px;
+        margin: 0;
     }
 
 }

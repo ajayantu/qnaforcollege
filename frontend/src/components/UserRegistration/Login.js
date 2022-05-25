@@ -28,7 +28,7 @@ export default function Login() {
             <div className="login-container">
                 <div className="login-elements">
                     <h1>Login</h1>
-                    <form action=''>
+                    <form action='#'>
                         <div className="email-item login-item">
                             <span>Email</span>
                             <input type="email" name='email' onChange={handleChange} required={true} />

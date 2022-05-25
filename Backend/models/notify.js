@@ -12,6 +12,9 @@ const notifySchema = new Schema({
     qstn:{
         type:Schema.Types.ObjectId,
         ref:'Question'
+    },
+    user_profile:{
+        type:String
     }
    
 },{timestamps:true})

@@ -1,0 +1,29 @@
+.alert_container{
+    padding: 14px;
+    z-index: 10;
+    position:fixed;
+    width: 100%;
+}
+.green_alert{
+    background: rgb(209, 231, 221);
+    border: 1px solid rgb(186, 219, 204);
+    color: rgb(15, 81, 50);
+}
+.red_alert{
+    background: rgb(248, 215, 218);
+    border: 1px solid rgb(245, 194, 199);
+    color: rgb(132, 32, 41);
+}
+.alert_container .alert_details {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.alert_container .alert_details span{
+    font-size: 0.9rem;
+    margin-right: 8px;
+}
+.alert_container .alert_details .alert_close{
+    font-size: 16px;
+    cursor: pointer;
+}

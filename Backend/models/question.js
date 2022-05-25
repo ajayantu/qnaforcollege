@@ -22,7 +22,8 @@ const qstnSchema = new Schema({
     },
     visibility:{
         type:Number,
-        default:3
+        default:3,
+        required:true
     },
     ansnumber:{
         type:Number,

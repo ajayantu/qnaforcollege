@@ -3,11 +3,14 @@ import React, { useContext, useEffect, useState } from 'react'
 import questionContext from "../../context/Question"
 import { CKEditor } from '@ckeditor/ckeditor5-react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
-import { useNavigate } from 'react-router-dom'
-
-import { useParams } from "react-router-dom";
+import { useNavigate,useParams,useLocation } from 'react-router-dom'
+import './Answers.css'
+import QuestionShow from './QuestionShow';
+import Spinner from '../Spinner/Spinner';
 export default function Answers(props) {
     const navigate = useNavigate();
+    const { qstnId } = useParams();
+    const { fetchAnswer, answers, addAnswer, setAnswers,qstn,loading } = useContext(questionContext);
     var config = {
         toolbar: ['heading', '|', 'bold', 'italic', 'blockQuote', 'link', 'bulletedList', 'numberedList', 'outdent', 'indent', '|', 'insertTable'],
 
@@ -30,21 +33,14 @@ export default function Answers(props) {
                 'tableRow',
                 'mergeTableCells'
             ]
-        },
-        ckfinder: {
-            uploadUrl: 'http://localhost:5000/api/uploads'
         }
     }
-
-    const { qstnId } = useParams();
     const [ans, setAns] = useState("");
-    const { fetchAnswer, answers, addAnswer, setAnswers } = useContext(questionContext);
-
+    
     const handleSubmitAns = (e) => {
         const token = localStorage.getItem('token');
         if (!token) {
             e.preventDefault();
-            console.log("Please login first");
             navigate("/login");
 
         }
@@ -67,26 +63,31 @@ export default function Answers(props) {
     }, []);
     return (
         <>
-            <div className="answer-container">
-                {!answers ? <p className='no-items-text'>No Answers for this Question</p> :
-                    answers.map((ans) => {
-                        return <AnswerItem key={ans._id} ans={ans} />
+            <div className="answer_main_container">
+                {qstn && <QuestionShow qstnId={qstnId} qstn={qstn} />}
+                <div className="answer-container">
+                    {loading && <Spinner /> }
+                    {answers.length>0 &&
+                        answers.map((ans) => {
+                            return <AnswerItem key={ans._id} ans={ans} />
                     })}
 
-                <div className="addAnswer">
-                    <h2>Add Answer</h2>
-                    <div className="editor-container">
-                        <CKEditor
-                            editor={ClassicEditor}
-                            data={props.data}
-                            onChange={handleEditorChange}
-                            config={config}
+                    <div className="addAnswer">
+                        <h2>Add Answer</h2>
+                        <div className="editor-container">
+                            <CKEditor
+                                editor={ClassicEditor}
+                                data={props.data}
+                                onChange={handleEditorChange}
+                                config={config}
 
-                        />
+                            />
+                        </div>
+                        <button className="btn_submit_ans" onClick={handleSubmitAns}>Submit</button>
                     </div>
-                    <button className="btn_submit_ans" onClick={handleSubmitAns}>Submit</button>
                 </div>
             </div>
+            
         </>
     )
 }

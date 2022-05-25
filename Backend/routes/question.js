@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const {isSignedIn,isSignedInNL} = require('../controllers/auth');
-const {addQstn,getUserQstns,getQuestions,editQuestion,deleteQuestion} = require('../controllers/question');
+const {addQstn,getUserQstns,getQuestions,editQuestion,deleteQuestion,getQstn} = require('../controllers/question');
 const { body } = require('express-validator');
 
 router.post('/addqstn',[body('title').isLength({min:5}).withMessage("Title min length should be 5"),body('description').isLength('5').withMessage("Description min length should be 5"),body('visibility').isNumeric()],isSignedIn,addQstn)
@@ -14,4 +14,5 @@ router.put('/editqstn/:qstnId',isSignedIn,editQuestion);
 
 router.delete('/deleteqstn/:qstnId',isSignedIn,deleteQuestion);
 
+router.get('/fetchqstn/:qstnId',getQstn);
 module.exports = router;

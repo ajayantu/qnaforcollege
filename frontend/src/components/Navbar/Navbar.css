@@ -29,7 +29,9 @@ nav{
 .logo{
     user-select: none;
 }
-
+.nav-content .menu-items a{
+    font-size: 14.7px;
+}
 .menu-items a{
     text-decoration: none;
     color: #fff;
@@ -39,7 +41,11 @@ nav{
     margin-left: 5px;
     user-select: none;
 }
+.nav-content .right-content .profile-pic img{
+    width: 100%;
+    border-radius: 50%;
 
+}
 .right-content{
     display: flex;
     align-items: center;

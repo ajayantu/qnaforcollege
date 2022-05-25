@@ -20,7 +20,8 @@ const userSchema = new Schema({
     },
     role:{
         type:Number,
-        default:0
+        default:0,
+        required:true
     },
     qstn:{
         type:Number,

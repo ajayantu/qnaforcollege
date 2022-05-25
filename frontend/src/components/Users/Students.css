@@ -1,35 +1,57 @@
-.students-container{
+.askuser-container{
+    display: grid;
+    /* justify-content: flex-start;
+    flex-wrap: wrap; */
+    grid-template-columns: repeat(auto-fit,minmax(230px,1fr));
+    margin-left: 15.7rem;
+    margin-right: 10px;
     margin-top: 10px;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    margin-left: 15rem;
+    gap: 10px;
 }
-.student-item{
+.student_item{
     font-size: 0.8rem;
     color: rgba(0,0,0,.8);
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     padding: 10px;
     background-color: #fff;
-    margin: 0 10px;
+    border-radius: 5px;
 }
-.student-item button{
-    box-shadow: rgba(255, 255, 255, 0.4) 0px 1px 0px 0px inset;
-    margin-top: 8px;
+.stud_info{
+    display: flex;
+    align-items: center;
+}
+.stud_info img{
+    margin-top: 5px;
+    margin-right: 10px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+.student_item .stud_info .name_badge .author_badge{
+    text-align: center;
+    padding: 2px 6px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5px;
+    font-size: 0.7rem;
+}
+.student_item button{
     cursor: pointer;
-    border: 1px solid transparent;
-    border-radius: 3px;
-    padding: 0px 18px;
+    width: 100%;
     background-color: rgb(10, 149, 255);
-    color:#fff;
-    user-select: none;
+    border: none;
+    margin-top: 15px;
+    color: #fff;
+    border-radius: 5px;
+}
+.student_item button:active{
+    background-color: rgb(50, 159, 241);
 }
 @media only screen and (max-width: 850px) {
-    .students-container{
-        margin-left: 0;
+    .askuser-container{
+        margin-left: 10px;
     }
-
 }

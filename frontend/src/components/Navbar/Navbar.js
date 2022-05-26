@@ -47,9 +47,6 @@ export default function Navbar() {
         isLogin && fetchNotify();
         isLogin && fetchProfile();
         // eslint-disable-next-line
-        return ()=>{
-            setProfile([])
-        }
     }, [isLogin])
     return (
         <>

@@ -20,12 +20,12 @@ Above line would serve all files/folders inside of the 'b' directory
 And make them accessible through http://localhost:5000/a.
 */
 
-app.use(express.static(__dirname + '/public'));
-app.use('/public', express.static('public'));
-
 app.use(cors());
 app.use(cookieParser());
 app.use(express.json());
+app.use(express.static(__dirname + '/public'));
+app.use('/public', express.static('public'));
+
 
 //Routes
 app.use('/api',authRoutes);

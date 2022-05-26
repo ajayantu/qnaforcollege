@@ -6,6 +6,7 @@ import point from './points_icon.png'
 import questionContext from "../../context/Question"
 export default function Profile(props) {
   const [singleFile,setSingleFile] = useState(null);
+  const [img,setImg] = useState(false)
   const { findBadge,setProfile,uploadProfilePic,setAlert } = useContext(questionContext);
   const fullBadge = findBadge(props.profile.badge);
   const badgeStyle = {
@@ -40,7 +41,14 @@ export default function Profile(props) {
     }
   
   }
-    
+  const image = new Image();
+  image.onload = () => {
+      setImg(true)
+  }
+  image.onerror = () => {
+      setImg(false)
+  }
+image.src = props.profile.profile_pic;
   return (
     <div className='profile_main'>
       <div className="profile_card">
@@ -48,7 +56,7 @@ export default function Profile(props) {
           <img src={bg} alt="" />
         </div>
         <div className="profile_pic">
-          <img src={props.profile.profile_pic?props.profile.profile_pic:user} alt="" />
+          <img src={img?props.profile.profile_pic:user} alt="" />
         </div>
         <div className="user_name_badge">
           <h2 className="username">{props.profile.username}</h2>

@@ -6,9 +6,6 @@ export default function ProfileFetcher() {
   const { fetchProfile,setProfile,profile } = useContext(questionContext);
   useEffect(()=>{
     fetchProfile();
-    return ()=>{
-      setProfile(null)
-    }
     // eslint-disable-next-line
 },[])
   return (

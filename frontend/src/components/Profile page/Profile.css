@@ -1,13 +1,12 @@
 .profile_main{
     padding: 3px;
-    height: 93vh;
+    height: 100vh;
     display: flex;
     /* flex-direction: column; */
     justify-content: center;
     align-items: center;
     margin-left: 15rem;
     flex-wrap: wrap;
-    gap: 35px;
 }
 .profile_card{
     margin: 10px;
@@ -107,8 +106,8 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    border: 2px dotted rgb(155, 152, 152);
-    padding: 8px;
+    padding: 10px;
+    background-color: #fff;
 }
 .upload_pic_control .pic_upload_btn input{
     display: none;

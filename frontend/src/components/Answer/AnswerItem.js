@@ -17,14 +17,16 @@ export default function AnswerItem(props) {
         <div className="answer dpm ans-item" >
             <div className="answer_question_details">
                     <div className="author_details">
-                        <img src={props.ans.user.profile_pic || user} alt="" />
+                        <img src={props.ans.user.profile_pic?props.ans.user.profile_pic:user} alt="" />
                         <div className="author_details_nb">
                             <span className='author_username'>{props.ans.user.username}</span>
                             <span className="author_badge" style={badgeStyle}>{fullBadge.badge}</span>
                         </div>
                         {props.ans.user._id===idUser?<i className="far fa-trash-alt del_btn" onClick={deleteAns}></i>:<></>}
                     </div>
-                    {parse(props.ans.answer)}
+                    <div className="answer_of_qstn_item">
+                        {parse(props.ans.answer)}
+                    </div>
                 </div>
             
         </div>

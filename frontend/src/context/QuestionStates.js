@@ -27,6 +27,9 @@ export default function QuestionStates(props) {
     const [alert,setAlert] = useState({msg:"",active:false})
     const [qstn,setQstn] = useState(null)
     
+    const checkImage = async(path)=>{
+        
+    }
     const deleteAnswer = async(ansId)=>{
         setProgress(10)
         const res = await axios.delete(`${host}/deleteans/${ansId}`,{
@@ -364,7 +367,7 @@ export default function QuestionStates(props) {
     }
 
     const qstnValues = {
-        fetchQstns, questions, answers, setAnswers, fetchAnswer, addAnswer, fetchUser, user,setUser,role, fetchNotify, notifyCount, editNotify, notify, fetchUserQstns, userQstns, fetchUserAnsQstn, userAnsQstns, progress, students, fetchStudents, setQstnId, setUserId, handleAsk, findBadge, login, isLogin, setIsLogin, signup,uploadProfilePic,page,setPage,pages,setPages,setQuestions,loading,setLoading,profile,setProfile,fetchProfile,teachers,setTeachers,fetchTeachers,addQuestion,deleteQuestion,updateQuestion,idUser,deleteAnswer,alert,setAlert,qstn,getQstnFromId,setQstn,setUserQstns,setUserAnsQstns
+        fetchQstns, questions, answers, setAnswers, fetchAnswer, addAnswer, fetchUser, user,setUser,role, fetchNotify, notifyCount, editNotify, notify, fetchUserQstns, userQstns, fetchUserAnsQstn, userAnsQstns, progress, students, fetchStudents, setQstnId, setUserId, handleAsk, findBadge, login, isLogin, setIsLogin, signup,uploadProfilePic,page,setPage,pages,setPages,setQuestions,loading,setLoading,profile,setProfile,fetchProfile,teachers,setTeachers,fetchTeachers,addQuestion,deleteQuestion,updateQuestion,idUser,deleteAnswer,alert,setAlert,qstn,getQstnFromId,setQstn,setUserQstns,setUserAnsQstns,checkImage
     }
     return (
         <QuestionContext.Provider value={qstnValues}>

@@ -72,13 +72,11 @@
     flex-wrap: wrap;
     align-items: center;
 }
-.card-footer .author a img{
+/* .card-footer .author a img{
     width: 100%;
     margin-top: 15px;
-    border: 2px solid #407cf7;
-    padding: 2px;
-    border-radius: 50%;
-}
+    
+} */
 .card-footer .author .author-details{
     margin-left: 20px;
 
@@ -98,7 +96,9 @@
 .card-footer .author .author-thumb{
     width: 50px;
     height: 50px;
-
+    border-radius: 50%;
+    border: 2px solid #407cf7;
+    padding: 2px;
 }
 .card .card-block .card-text{
     color: #707885;

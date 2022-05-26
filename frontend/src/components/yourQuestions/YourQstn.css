@@ -2,7 +2,7 @@
     background-color: #fff;
     margin-bottom: 1px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-    padding: 24px;
+    padding: 22px;
 }
 .user-question .user_details{
     display: flex;
@@ -22,6 +22,8 @@
 }
 .user-question .user_details .control_options i{
     cursor: pointer;
+    font-size: 16px;
+    margin-left:6px ;
 }
 .user-question .user_details img{
     width: 43px;

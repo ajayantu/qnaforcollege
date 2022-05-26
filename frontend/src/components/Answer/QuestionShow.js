@@ -1,4 +1,4 @@
-import React,{useEffect,useContext} from 'react'
+import React,{useEffect,useContext } from 'react'
 import questionContext from "../../context/Question"
 import user from './user.png'
 
@@ -20,7 +20,7 @@ export default function QuestionShow(props) {
     <>
         <div className="answer_question_details">
             <div className="author_details">
-                <img src={qstn.user.profile_pic || user} alt="" />
+                <img src={qstn.user.profile_pic?qstn.user.profile_pic:user} alt="" />
                 <div className="author_details_nb">
                     <span className='author_username'>{qstn.user.username}</span>
                     <span className="author_badge" style={badgeStyle}>{fullBadge.badge}</span>

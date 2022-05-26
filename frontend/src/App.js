@@ -1,5 +1,5 @@
 import Home from "./components/Home/Home";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, useNavigate } from "react-router-dom";
 import Answers from "./components/Answer/Answers";
 import Navbar from './components/Navbar/Navbar'
 import Notification from "./components/Notification/Notification";
@@ -20,6 +20,7 @@ import Alert from "./components/Alerts/Alert";
 import DisplayUserDetail from "./components/DisplayUserInfo/DisplayUserDetail";
 import About from "./components/About/About";
 import ProfileFetcher from "./components/Profile page/ProfileFetcher";
+import Mainpage from "./components/MainPage/Mainpage";
 
 function App() {
   const { progress, isLogin } = useContext(questionContext);
@@ -34,7 +35,7 @@ function App() {
       />
       <Sidebar />
       <Routes>
-        <Route path="/" element={<div>Hello</div>} />
+        <Route path="/" element={<Mainpage />} />
         <Route path="/questions/:pageNum" element={<Home />} />
         <Route path="/answers/:qstnId" element={<Answers />} />
         <Route path="/user/:userId" element={<DisplayUserDetail />} />

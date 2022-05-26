@@ -13,7 +13,7 @@ export default function NotificationItem(props) {
                         </div>
                 </div>
                 <div className="notify_img">
-                    <img src={props.notif.user_profile || user} alt="" />
+                    <img src={props.notif.user_profile?props.notif.user_profile:user} alt="" />
                 </div>
             </div>
         </>

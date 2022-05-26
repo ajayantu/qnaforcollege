@@ -43,9 +43,11 @@ export default function Profile(props) {
   }
   const image = new Image();
   image.onload = () => {
+      console.log("yess");
       setImg(true)
   }
   image.onerror = () => {
+      console.log("nooo");
       setImg(false)
   }
 image.src = props.profile.profile_pic;

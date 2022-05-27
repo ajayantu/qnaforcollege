@@ -25,7 +25,7 @@ export default function UpdateQstn() {
     const handleFormChange = (e)=>{
       setQstnDetails({
         ...qstnDetails,
-        [e.target.name]:e.target.value
+        [e.target.name]:e.target.name==="visibility"?parseInt(e.target.value):e.target.value
       })
     }
     return (

@@ -27,9 +27,6 @@ export default function QuestionStates(props) {
     const [alert,setAlert] = useState({msg:"",active:false})
     const [qstn,setQstn] = useState(null)
     
-    const checkImage = async(path)=>{
-        
-    }
     const deleteAnswer = async(ansId)=>{
         setProgress(10)
         const res = await axios.delete(`${host}/deleteans/${ansId}`,{
@@ -49,7 +46,6 @@ export default function QuestionStates(props) {
         setProgress(100)
     }
     const updateQuestion = async(qstnDetails,qstnId)=>{
-        qstnDetails.visibility = parseInt(qstnDetails.visibility)
         setProgress(10)
         await axios.put(`${host}/editqstn/${qstnId}`,qstnDetails,{
             headers:{

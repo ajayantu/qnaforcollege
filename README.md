@@ -49,7 +49,8 @@ Run the backend and frontend
 ## Screenshots
 
 
-![Screenshot (392)](https://user-images.githubusercontent.com/73870072/177910713-53af326e-c8e6-4e8d-bde8-13d771de5f5a.png)
+![Screenshot (398)](https://user-images.githubusercontent.com/73870072/177911210-06404812-e87b-4d1e-acf6-0938af7d745a.png)
+
 
 ![Screenshot (394)](https://user-images.githubusercontent.com/73870072/177910786-270d26cf-91bd-4e79-b6c9-e71c3be204fa.png)
 

@@ -3,7 +3,7 @@ import QuestionContext from './Question'
 import axios from 'axios'
 
 export default function QuestionStates(props) {
-    const host = process.env.REACT_APP_API;
+    const host = "https://qcollege.up.railway.app/api/";
     const idUser = localStorage.getItem('user');
     const [isLogin, setIsLogin] = useState(localStorage.getItem("token") ? true : false);
     const [questions, setQuestions] = useState([]);

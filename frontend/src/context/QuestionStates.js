@@ -76,11 +76,18 @@ export default function QuestionStates(props) {
     const addQuestion = async (qstnDetails)=>{
         qstnDetails.visibility = parseInt(qstnDetails.visibility)
         setProgress(10)
-        await axios.post(`${host}/addqstn`,qstnDetails,{
+        const res=await axios.post(`${host}/addqstn`,qstnDetails,{
             headers:{
                 'auth_token':localStorage.getItem("token")
             }
         })
+        console.log(res.data);
+        if (res.data.status === "error") {
+            setAlert({msg:res.data.message,active:true})
+        }
+        else{
+            setAlert({msg:"Question added successfully...",active:true,type:2})
+        }
         setProgress(50)
         setProgress(100)
     }

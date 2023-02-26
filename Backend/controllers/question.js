@@ -11,7 +11,20 @@ exports.addQstn = async (req,res)=>{
         if(!err.isEmpty()){
             return res.json({staus:"error",message:err.errors[0].msg})
         }
-    
+        
+        const qstnss = await Question.find({
+            $expr: {
+                $eq: [
+                    { $dateToString: { format: '%Y-%m-%d', date: '$$NOW' } },
+                    { $dateToString: { format: '%Y-%m-%d', date: '$createdAt' } },
+                ],
+            },
+        })
+        const len=qstnss.length
+        if(len>=5){
+            return res.json({status:"error",message:`Can only post 5 questions per day. You have posted ${len} today`})
+        }
+        
         const qstn = new Question({
             user : req.user._id,
             title : req.body.title,

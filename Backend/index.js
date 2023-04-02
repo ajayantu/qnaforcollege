@@ -40,6 +40,9 @@ app.use('/api',notifyRoutes);
 app.get('/',(req,res)=>{
     res.send("hello world");
 })
+app.get('/test',(req,res)=>{
+    res.send("Test success");
+})
 
 
 app.listen(port,()=>{

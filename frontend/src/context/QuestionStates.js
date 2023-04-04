@@ -4,8 +4,8 @@ import axios from 'axios'
 
 export default function QuestionStates(props) {
     
-    //https://qcollege.up.railway.app
-    const host = "http://localhost:5000/api";
+    //http://localhost:5000/api
+    const host = "https://qcollege.up.railway.app/api"
     const idUser = localStorage.getItem('user');
     const [isLogin, setIsLogin] = useState(localStorage.getItem("token") ? true : false);
     const [questions, setQuestions] = useState(null);

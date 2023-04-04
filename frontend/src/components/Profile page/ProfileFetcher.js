@@ -3,7 +3,7 @@ import questionContext from "../../context/Question"
 import Profile from './Profile';
 
 export default function ProfileFetcher() {
-  const { fetchProfile,setProfile,profile } = useContext(questionContext);
+  const { fetchProfile,profile } = useContext(questionContext);
   useEffect(()=>{
     fetchProfile();
     // eslint-disable-next-line

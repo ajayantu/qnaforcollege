@@ -17,7 +17,7 @@ export default function YourQstn() {
             <div className="user-questions-container">
                 {loading && <Spinner />}
                 {
-                    userQstns.length>0 && !loading?
+                    userQstns && userQstns.length>0 && !loading?
                     userQstns.map((qstn)=>{
                         return <YourQstnItem key={qstn._id} qstn={qstn} qstnId={qstn._id} />
                     }):!loading&&<div className='no_asked_qstn'>No Questions Asked</div>

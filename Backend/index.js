@@ -1,4 +1,5 @@
 const express = require('express');
+const app = express();
 const cors = require('cors');
 var cookieParser = require('cookie-parser');
 const connectDB = require('./db.js');
@@ -8,7 +9,6 @@ const answerRoutes = require('./routes/answer')
 const userRoutes = require('./routes/user')
 const notifyRoutes = require('./routes/notify')
 require('dotenv').config();
-const app = express();
 const port = process.env.PORT|| 5000;
 connectDB();
 
@@ -38,10 +38,10 @@ app.use('/api',notifyRoutes);
 
 //home route
 app.get('/',(req,res)=>{
-    res.send("hello world");
+    return res.send("hello world");
 })
 app.get('/test',(req,res)=>{
-    res.send("Test success");
+    return res.send("Test success");
 })
 
 

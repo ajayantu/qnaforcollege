@@ -6,7 +6,7 @@ import questionContext from "../../context/Question"
 import { useNavigate } from 'react-router-dom'
 
 export default function QuestionItem(props) {
-    const { findBadge } = useContext(questionContext);
+    const { findBadge,darkmode } = useContext(questionContext);
     let navigate = useNavigate();
     const fullBadge = findBadge(props.qstn.user.badge);
     const badgeStyle = {
@@ -22,21 +22,20 @@ export default function QuestionItem(props) {
 
         }
     }
-
     return (
-        <div className="card">
+        <div className={`card ${darkmode && 'dark'}`}>
             <img className="qstn-img" src="" alt="" />
             <div className="card-block">
                 <div className="date-time">
-                    <span>Updated at {new Date(props.qstn.updatedAt).toLocaleDateString()}</span>
+                    <span className={`${darkmode && 'dark-span'}`}>Updated at {new Date(props.qstn.updatedAt).toLocaleDateString()}</span>
                 </div>
-                <h2 className="card-title"><Link to={`/answers/${props.qstnId}`}>{props.qstn.title}</Link></h2>
+                <h2 className="card-title"><Link to={`/answers/${props.qstnId}`} className={`${darkmode && 'dark-a'}`}>{props.qstn.title}</Link></h2>
                 <h4 className="card-text">
                     {props.qstn.description}
                 </h4>
                 <div className="answer-content">
                     <div className="ans-num" style={{ marginRight: 30 }}>
-                        <span>{props.qstn.ansnumber} Answers</span>
+                        <span className={`${darkmode && 'dark-span'}`}>{props.qstn.ansnumber} Answers</span>
                     </div>
                     <Link to={`/answers/${props.qstn._id}`} onClick={handleAnswer}>
                         <div className="answer-btn">
@@ -49,7 +48,7 @@ export default function QuestionItem(props) {
                     <div className="author">
                         <Link to={`/user/${props.qstn.user._id}`}><img className="author-thumb" src={props.qstn.user.profile_pic?props.qstn.user.profile_pic:user_icon} alt="" /></Link>
                         <span className="author-details">
-                            <span className="author-name"><Link to={`/user/${props.qstn.user._id}`}>{props.qstn.user.username}</Link></span>
+                            <span className="author-name"><Link to={`/user/${props.qstn.user._id}`} className={`${darkmode && 'dark-a'}`}>{props.qstn.user.username}</Link></span>
                             <span className="author-badge" style={badgeStyle}>{fullBadge.badge}</span>
                         </span>
                     </div>

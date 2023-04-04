@@ -9,7 +9,7 @@ export default function Notification() {
             {isLogin && 
                 <div className="notify_container">
                 {
-                    notify.length>0?notify.map((notif)=>{
+                    notify && notify.length>0?notify.map((notif)=>{
                         return <NotificationItem key={notif._id} notif={notif}  />
                     }):<div className='no_notify'>No Notifications</div>
                 }

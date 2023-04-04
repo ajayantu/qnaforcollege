@@ -3,7 +3,7 @@ import questionContext from "../../context/Question"
 
 
 export default function QstnModalItem(props) {
-    const { setQstnId } = useContext(questionContext);
+    const { setQstnId,darkmode } = useContext(questionContext);
     const handleQstnSelect = (e)=>{
         const qstn = document.querySelectorAll(".qstn-select");
         for (let i = 0; i < qstn.length; i++) {
@@ -14,8 +14,8 @@ export default function QstnModalItem(props) {
     }
     
     return (
-        <div className="qstn-select" onClick={handleQstnSelect}>
-            {props.qstn.title}
+        <div className={`qstn-select`} onClick={handleQstnSelect}>
+            <p className={`${darkmode && 'help-modal-title-dark'}`} style={{pointerEvents:"none"}}>{props.qstn.title}</p>
         </div>
     )
 }

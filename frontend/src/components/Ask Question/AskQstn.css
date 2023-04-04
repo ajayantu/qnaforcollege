@@ -1,21 +1,29 @@
-#root .askqstn_container{
-    margin-left: 15rem;
-    display: flex;
-    height: 90vh;
-    justify-content: center;
-    align-items: center;
-    background:linear-gradient(135deg,#71b7e6,#9b59b6);
-    padding: 10px;
+.askqstn_elements.active{
+    transform: translate(-50%,-55%) scale(1);
 }
 .askqstn_elements{
-    display: flex;
+    /* display: flex;
     flex-direction: column;
     gap: 10px;
     max-width: 500px;
     width: 100%;
     background: #fff;
     padding: 25px 30px;
-    border-radius: 5px;
+    border-radius: 5px; */
+
+    position: fixed;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%,-55%) scale(0);
+    transition: 200ms;
+    background: #fff;
+    border-radius: 10px;
+    z-index: 10;
+
+    width: 500px;
+    max-width: 90%;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    padding: 30px;
 }
 .askqstn_container .askqstn_elements .title{
     font-size: 25px;
@@ -24,7 +32,7 @@
 .askqstn_elements form .input_box input,.askqstn_elements form .input_box textarea{
     height: 40px;
     width: 100%;
-    padding: 2px 5px;
+    padding: 5px 8px;
     outline: none;
 }
 .askqstn_elements form .input_box{

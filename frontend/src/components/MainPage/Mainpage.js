@@ -5,6 +5,7 @@ export default function Mainpage() {
     const navigate = useNavigate();
     useEffect(()=>{
       navigate("/questions/1")
+      // eslint-disable-next-line
     },[])
   return (
     <div></div>

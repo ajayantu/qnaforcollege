@@ -3,10 +3,12 @@ import QuestionContext from './Question'
 import axios from 'axios'
 
 export default function QuestionStates(props) {
-    const host = "https://qcollege.up.railway.app/api/";
+    
+    //https://qcollege.up.railway.app
+    const host = "http://localhost:5000/api";
     const idUser = localStorage.getItem('user');
     const [isLogin, setIsLogin] = useState(localStorage.getItem("token") ? true : false);
-    const [questions, setQuestions] = useState([]);
+    const [questions, setQuestions] = useState(null);
     const [userQstns, setUserQstns] = useState([]);
     const [answers, setAnswers] = useState([]);
     const [userAnsQstns, setUserAnsQstns] = useState([]);
@@ -17,7 +19,6 @@ export default function QuestionStates(props) {
     const [user, setUser] = useState({});
     const [role, setRole] = useState("");
     const [notify, setNotify] = useState([]);
-    let count = 0;
     const [notifyCount, setNotifyCount] = useState(0);
     const [progress, setProgress] = useState(0);
     const [page,setPage] = useState(1);
@@ -26,6 +27,7 @@ export default function QuestionStates(props) {
     const [profile,setProfile] = useState(null);
     const [alert,setAlert] = useState({msg:"",active:false})
     const [qstn,setQstn] = useState(null)
+    const [darkmode,setDarkmode] = useState(false);
     
     const deleteAnswer = async(ansId)=>{
         setProgress(10)
@@ -81,7 +83,6 @@ export default function QuestionStates(props) {
                 'auth_token':localStorage.getItem("token")
             }
         })
-        console.log(res.data);
         if (res.data.status === "error") {
             setAlert({msg:res.data.message,active:true})
         }
@@ -281,7 +282,8 @@ export default function QuestionStates(props) {
             }
         })
         setProgress(50)
-        if (res.data) {
+        let count = 0;
+        if (res.data.notify) {
             for (let i = 0; i < res.data.notify.length; i++) {
                 if (res.data.current === res.data.notify[i]._id.toString()) {
                     break;
@@ -370,7 +372,7 @@ export default function QuestionStates(props) {
     }
 
     const qstnValues = {
-        fetchQstns, questions, answers, setAnswers, fetchAnswer, addAnswer, fetchUser, user,setUser,role, fetchNotify, notifyCount, editNotify, notify, fetchUserQstns, userQstns, fetchUserAnsQstn, userAnsQstns, progress, students, fetchStudents, setQstnId, setUserId, handleAsk, findBadge, login, isLogin, setIsLogin, signup,uploadProfilePic,page,setPage,pages,setPages,setQuestions,loading,setLoading,profile,setProfile,fetchProfile,teachers,setTeachers,fetchTeachers,addQuestion,deleteQuestion,updateQuestion,idUser,deleteAnswer,alert,setAlert,qstn,getQstnFromId,setQstn,setUserQstns,setUserAnsQstns
+        fetchQstns, questions, answers, setAnswers, fetchAnswer, addAnswer, fetchUser, user,setUser,role, fetchNotify, notifyCount, editNotify, notify, fetchUserQstns, userQstns, fetchUserAnsQstn, userAnsQstns, progress, students, fetchStudents, setQstnId, setUserId, handleAsk, findBadge, login, isLogin, setIsLogin, signup,uploadProfilePic,page,setPage,pages,setPages,setQuestions,loading,setLoading,profile,setProfile,fetchProfile,teachers,setTeachers,fetchTeachers,addQuestion,deleteQuestion,updateQuestion,idUser,deleteAnswer,alert,setAlert,qstn,getQstnFromId,setQstn,setUserQstns,setUserAnsQstns,darkmode,setDarkmode
     }
     return (
         <QuestionContext.Provider value={qstnValues}>

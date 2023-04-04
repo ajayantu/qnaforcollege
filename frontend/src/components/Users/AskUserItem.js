@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom'
 
 export default function AskUserItem(props) {
     let navigate = useNavigate();
-    const { setUserId,findBadge } = useContext(questionContext);
+    const { setUserId,findBadge,darkmode } = useContext(questionContext);
     const fullBadge = findBadge(props.askuser.badge);
     const badgeStyle = {
         backgroundColor: fullBadge.color,
@@ -32,11 +32,11 @@ export default function AskUserItem(props) {
     }
     return (
         <>
-            <div className="student_item">
+            <div className={`student_item ${darkmode && 'bg-dark'}`}>
                 <div className="stud_info">
                     <img src={props.askuser.profile_pic || user} alt="" />
                     <div className="name_badge">
-                        <h3 className="stud_name">{props.askuser.username}</h3>
+                        <h3 className={`stud_name ${darkmode && 'title-dark'}`}>{props.askuser.username}</h3>
                         <span className="author_badge" style={badgeStyle}>{fullBadge.badge}</span>
                     </div>
                 </div>

@@ -113,9 +113,11 @@ exports.isSignedInNL = function(req,res,next){
                 req.isLogin = false;
                 next();
             }
-            req.user = user;
-            req.isLogin = true
-            next();
+            else{
+                req.user = user;
+                req.isLogin = true
+                next();
+            }
         });  
     }
     else{

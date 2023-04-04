@@ -10,7 +10,7 @@ import Spinner from '../Spinner/Spinner';
 export default function Answers(props) {
     const navigate = useNavigate();
     const { qstnId } = useParams();
-    const { fetchAnswer, answers, addAnswer, setAnswers,qstn,loading } = useContext(questionContext);
+    const { fetchAnswer, answers, addAnswer, setAnswers,qstn,loading,darkmode } = useContext(questionContext);
     var config = {
         toolbar: ['heading', '|', 'bold', 'italic', 'blockQuote', 'link', 'bulletedList', 'numberedList', 'outdent', 'indent', '|', 'insertTable'],
 
@@ -72,8 +72,8 @@ export default function Answers(props) {
                             return <AnswerItem key={ans._id} ans={ans} />
                     })}
 
-                    <div className="addAnswer">
-                        <h2>Add Answer</h2>
+                    <div className={`addAnswer ${darkmode && 'bg-dark'}`}>
+                        <h2 className={`${darkmode && 'title-dark'}`}>Add Answer</h2>
                         <div className="editor-container">
                             <CKEditor
                                 editor={ClassicEditor}

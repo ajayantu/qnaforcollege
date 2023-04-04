@@ -1,10 +1,14 @@
 .pages_tracker{
     margin: 10px;
+    margin-bottom: 20px;
     display: flex;
     align-items: center;
 }
 .pages_tracker span{
     margin: 0 10px;
+}
+.pages_tracker .dark-span{
+    color: #fff !important;
 }
 .pages_tracker button{
     margin-right: 3px;

@@ -1,5 +1,5 @@
 import Home from "./components/Home/Home";
-import { BrowserRouter as Router, Routes, Route, useNavigate } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import Answers from "./components/Answer/Answers";
 import Navbar from './components/Navbar/Navbar'
 import Notification from "./components/Notification/Notification";
@@ -13,7 +13,6 @@ import Students from './components/Users/Students'
 import Login from "./components/UserRegistration/Login";
 import Signup from "./components/UserRegistration/Signup";
 import ErrorPage from "./components/Error Page/ErrorPage";
-import AskQstn from "./components/Ask Question/AskQstn";
 import Teachers from "./components/Users/Teachers";
 import UpdateQstn from "./components/UpdateQstn/UpdateQstn";
 import Alert from "./components/Alerts/Alert";
@@ -21,7 +20,7 @@ import DisplayUserDetail from "./components/DisplayUserInfo/DisplayUserDetail";
 import About from "./components/About/About";
 import ProfileFetcher from "./components/Profile page/ProfileFetcher";
 import Mainpage from "./components/MainPage/Mainpage";
-
+import "./App.css"
 function App() {
   const { progress, isLogin } = useContext(questionContext);
   return (
@@ -47,7 +46,7 @@ function App() {
         <Route path="/about" element={<About />} />
         {!isLogin && <Route path="/login" element={<Login />} />}
         {!isLogin && <Route path="/signup" element={<Signup />} />}
-        {isLogin && <Route path="/askqstn" element={<AskQstn />} />}
+        {/* {isLogin && <Route path="/askqstn" element={<AskQstn />} />} */}
         {isLogin && <Route path="/updateqstn/:qstnId" element={<UpdateQstn />} />}
         {isLogin && <Route path="/profile" element={<ProfileFetcher />} />}
         <Route path="*" element={<ErrorPage />} />

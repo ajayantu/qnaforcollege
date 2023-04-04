@@ -86,7 +86,7 @@ exports.getQuestions = async (req,res)=>{
         return res.json({status:"ok",page,count:qstns.length,pages,questions:qstns});
 
     }catch(err){
-        return res.json({status:"error",message:err.message});
+        return res.send('nooo')
     }
 }
 

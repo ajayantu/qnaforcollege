@@ -5,6 +5,7 @@
     /* flex-wrap: wrap; */
     justify-content: center;
     /* align-items: center; */
+    padding: 1em;
 }
 .contents .question-header{
     display: flex;
@@ -14,11 +15,20 @@
     padding: 20px;
     margin: 0 10px;
     margin-top: 10px;
+    margin-bottom: 20px;
+
+    border-radius: 0.25rem;
+}
+.contents .header-dark{
+    background-color: #25262c !important;
 }
 .question-header h1{
     font-size: 27px;
     color:rgba(0,0,0,.8);
     font-weight: 400;
+}
+.question-header .dark-h1{
+    color: #fff !important;
 }
 .question-header .ask-btn{
     padding: 5px 8px;
@@ -49,6 +59,9 @@
     margin-bottom: 10px;
     box-shadow: 0 1px 7px rgb(0 0 0 / 5%);
     border-radius: .25rem;
+}
+.content-container .dark{
+    background-color: #25262c;
 }
 .content-container .card .card-block{
     padding: 20px;
@@ -81,6 +94,9 @@
     margin-left: 20px;
 
 }
+.card-footer .author .author-details .author-name .dark-a{
+    color: #fff !important;
+}
 .card-footer .author .author-details .author-name a{
     font-weight: bold;
     text-decoration: none;
@@ -111,6 +127,9 @@
     text-decoration: none;
     font-size: 1.3rem;
 }
+.card .card-block h2 .dark-a{
+    color: #dcdcdc  !important;
+}
 .card .card-block h2 a:hover{
     text-decoration: underline;
 }
@@ -127,17 +146,23 @@
 }
 .card .card-block .answer-content .ans-num span{
     font-size: 0.9rem;
-    font-weight: bold;
+    font-weight: 500;
     color: rgba(0,0,0,.44);
+}
+.card .card-block .answer-content .ans-num .dark-span{
+    color: #cfcfcf !important;
 }
 .card .card-block .answer-content{
     margin-top: 6px;
 }
 
 .card .date-time span{
+    font-size: 0.9rem;
     color: rgba(0,0,0,.44);
 }
-
+.card .date-time .dark-span{
+    color: #cfcfcf !important;
+}
 .card-block .card-footer .author .author-details .author-badge{
     padding: 3px 5px;
     font-size: 12px;

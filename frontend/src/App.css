@@ -1,0 +1,26 @@
+.bg-dark{
+    background-color: #25262c !important;
+}
+.title-dark{
+    color: #dcdcdc !important;
+}
+.desc-dark{
+    color: #707885 !important;
+}
+.subtitle-dark{
+    color: #cfcfcf !important;
+}
+.bg-input-dark{
+    background-color: #1a1c22 !important;
+    color: #dcdcdc !important;
+}
+.sidebar-title-dark{
+    color: #dcdcdc !important;
+}
+.sidebar-subtitle-dark{
+    color: #d4d4d4 !important;
+}
+.help-modal-title-dark{
+    color: #dcdcdc !important;
+}
+

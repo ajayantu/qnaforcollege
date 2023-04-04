@@ -4,9 +4,10 @@ import questionContext from "../../context/Question"
 import { useNavigate } from 'react-router-dom';
 import icon from './user-icon.png';
 import { Link } from "react-router-dom";
+import AskQstn from '../Ask Question/AskQstn';
 
 export default function Navbar() {
-    const { fetchNotify, notifyCount, editNotify, isLogin, setIsLogin,fetchProfile,setProfile,profile } = useContext(questionContext);
+    const { fetchNotify, notifyCount, editNotify, isLogin, setIsLogin,fetchProfile,profile } = useContext(questionContext);
     let navigate = useNavigate();
     const handleLogout = () => {
         setIsLogin(false)
@@ -22,13 +23,24 @@ export default function Navbar() {
         const sidebar = document.querySelector(".sidebar");
         const visibility = sidebar.getAttribute('data-visible');
         if (visibility === "false") {
+            sidebar.style.zIndex=10
             sidebar.setAttribute("data-visible", true);
+            const overlay = document.querySelector("#overlay");
+            overlay.classList.add("active");
         }
         else if (visibility === "true") {
             sidebar.setAttribute("data-visible", false);
         }
     }
+    const handleModalClose = ()=>{
+        const modal = document.querySelector(".askqstn_elements");
+        const overlay = document.querySelector("#overlay");
+        const sidebar = document.querySelector(".sidebar");
+        modal.classList.remove("active");
+        overlay.classList.remove("active");
+        sidebar.setAttribute("data-visible", false);
 
+    }
     const handleNotify = () => {
         editNotify();
         navigate("/notify");
@@ -50,6 +62,7 @@ export default function Navbar() {
     }, [isLogin])
     return (
         <>
+        <AskQstn />
             <nav>
                 <div className="nav-content">
                     <i className="fas fa-bars menu-bar" data-visible="false" onClick={handleSidebar}></i>
@@ -91,6 +104,7 @@ export default function Navbar() {
                     </div>
                 </div>
             </nav>
+            <div id="overlay" onClick={handleModalClose}></div>
         </>
     )
 }

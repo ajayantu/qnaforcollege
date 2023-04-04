@@ -35,12 +35,11 @@
 }
 .qstn-select{
     cursor: pointer;
-    background-color: rgb(255, 255, 255);
     padding: 10px;
     margin-bottom: 2px;
 }
 .qstn-select:hover{
-    background-color: rgba(227, 231, 252, 0.938);
+    background-color: rgba(161, 169, 215, 0.938) !important;
 }
 .qstn-select :hover{
     text-decoration: underline;
@@ -54,8 +53,15 @@
     border-radius: 5px;
     color: #fff;
 }
+.qstn-select p{
+    color: black;
+}
 .modal-qstn-selected{
-    background-color: rgb(255, 230, 230);
+    background-color: rgba(161, 169, 215, 0.482) !important;
+    
+}
+.modal-qstn-selected p{
+    color: black;
 }
 @media only screen and (max-width: 850px) {
     .modal-main{

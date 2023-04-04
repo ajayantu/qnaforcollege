@@ -1,0 +1,71 @@
+#root .updateqstn_container{
+    margin-left: 15rem;
+    display: flex;
+    height: 90vh;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+.updateqstn_elements{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 500px;
+    width: 100%;
+    background: #fff;
+    padding: 25px 30px;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+}
+.updateqstn_container .updateqstn_elements .title{
+    font-size: 25px;
+    font-weight: 500;
+}
+.updateqstn_elements form .input_box input,.updateqstn_elements form .input_box textarea{
+    height: 40px;
+    width: 100%;
+    padding: 5px 8px;
+    outline: none;
+}
+.updateqstn_elements form .input_box{
+    margin-top: 10px;
+}
+.updateqstn_elements form .input_box span,.updateqstn_elements form .visibility_details span{
+    font-size: 0.9rem;
+    margin-bottom: 6px;
+}
+.updateqstn_elements form .input_box input:focus,
+.updateqstn_elements form .input_box textarea:focus{
+    border:2px solid #9b59b6;
+}
+.visibility_details label{
+    font-size: 0.9rem;
+    margin-left: 10px;
+}
+.visibility_details .v_title{
+    margin: 8px 0;
+}
+.updateqstn_elements form .input_box textarea{
+    resize: none;
+    height: 100px;
+}
+.updateqstn_elements form .visibility_details{
+    margin-top: 5px;
+}
+.updateqstn_elements form .submit_btn_qstn{
+    color: #fff;
+    font-weight: 500;
+    background: #009DDC;
+    width: 100%;
+    border: none;
+    padding: 5px 0;
+    margin-top: 12px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+@media(max-width:850px){
+    #root .updateqstn_container{
+        margin: 0;
+    }
+}

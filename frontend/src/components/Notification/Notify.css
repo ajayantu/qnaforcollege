@@ -8,6 +8,8 @@ body{
     flex-direction: column;
     justify-content: flex-start;
     align-items: stretch;
+
+    padding: 1em;
 }
 .notify_container .no_notify{
     text-align: center;

@@ -7,11 +7,12 @@ export default function YourAnswer() {
     const { fetchUserAnsQstn,userAnsQstns,loading,setUserAnsQstns } = useContext(questionContext);
     useEffect(() => {
         fetchUserAnsQstn();
-        // eslint-disable-next-line
+        
         return ()=>{
             setUserAnsQstns([])
             // eslint-disable-next-line
         }
+        // eslint-disable-next-line
     }, [])
     return (
         <>

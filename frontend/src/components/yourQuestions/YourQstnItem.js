@@ -6,7 +6,7 @@ import { Link, useNavigate } from 'react-router-dom';
 
 
 export default function YourQstnItem(props) {
-  const { deleteQuestion } = useContext(questionContext);
+  const { deleteQuestion,darkmode } = useContext(questionContext);
   let navigate = useNavigate()
     const updatedAgoFinder = ()=>{
         const date_diff = new Date(new Date()-new Date(props.qstn.updatedAt));
@@ -42,21 +42,21 @@ export default function YourQstnItem(props) {
     }
     return (
         <>
-            <div className="user-question">
+            <div className={`user-question ${darkmode && 'bg-dark'}`}>
                 <div className="user_details">
                     <img src={props.qstn.user.profile_pic || user} alt="" />
                     <div className="user_text">
-                        <h2>{props.qstn.user.username}</h2>
-                        <span>updated {updatedAgoFinder().val||""}{updatedAgoFinder().type}</span>
+                        <h2 className={`${darkmode && 'title-dark'}`}>{props.qstn.user.username}</h2>
+                        <span className={`${darkmode && 'subtitle-dark'}`}>updated {updatedAgoFinder().val||""}{updatedAgoFinder().type}</span>
                     </div>
                     <div className="control_options">
-                        <i className="far fa-edit" onClick={handleUpdate}></i>
-                        <i className="far fa-trash-alt" onClick={handleDelete}></i>
+                        <i  onClick={handleUpdate} className={`far fa-edit ${darkmode && 'title-dark'}`}></i>
+                        <i className={`far fa-trash-alt ${darkmode && 'title-dark'}`}  onClick={handleDelete}></i>
                     </div>
                 </div>
                 <div className="question_details">
-                    <Link to={`/answers/${props.qstnId}`}><h2>{props.qstn.title}</h2></Link>
-                    <p>{props.qstn.description}</p>
+                    <Link to={`/answers/${props.qstnId}`}><h2 className={`${darkmode && 'title-dark'}`}>{props.qstn.title}</h2></Link>
+                    <p className={`${darkmode && 'desc-dark'}`}>{props.qstn.description}</p>
                 </div>
             </div>
         </>

@@ -7,7 +7,7 @@ import questionContext from "../../context/Question"
 export default function Profile(props) {
   const [singleFile,setSingleFile] = useState(null);
   const [img,setImg] = useState(false)
-  const { findBadge,setProfile,uploadProfilePic,setAlert } = useContext(questionContext);
+  const { findBadge,setProfile,uploadProfilePic,setAlert,darkmode } = useContext(questionContext);
   const fullBadge = findBadge(props.profile.badge);
   const badgeStyle = {
     backgroundColor: fullBadge.color,
@@ -43,17 +43,15 @@ export default function Profile(props) {
   }
   const image = new Image();
   image.onload = () => {
-      console.log("yess");
       setImg(true)
   }
   image.onerror = () => {
-      console.log("nooo");
       setImg(false)
   }
 image.src = props.profile.profile_pic;
   return (
     <div className='profile_main'>
-      <div className="profile_card">
+      <div className={`profile_card ${darkmode && 'bg-dark'}`}>
         <div className="profilebg">
           <img src={bg} alt="" />
         </div>
@@ -61,38 +59,38 @@ image.src = props.profile.profile_pic;
           <img src={img?props.profile.profile_pic:user} alt="" />
         </div>
         <div className="user_name_badge">
-          <h2 className="username">{props.profile.username}</h2>
+          <h2 className={`username ${darkmode && 'title-dark'}`}>{props.profile.username}</h2>
           <span className="author-badge" style={badgeStyle}>{fullBadge.badge}</span>
         </div>
         <div className="points_details">
           <img src={point} alt="" />
-          <span className='points_amount'>{props.profile.points}</span>
+          <span className={`points_amount ${darkmode && 'title-dark'}`}>{props.profile.points}</span>
         </div>
         <hr className='line' />
         <div className="profile_details">
           <table>
             <tbody>
             <tr>
-              <td>{props.profile.qstn}</td>
-              <td>Asked</td>
+              <td className={`${darkmode && 'title-dark'}`}>{props.profile.qstn}</td>
+              <td className={`${darkmode && 'title-dark'}`}>Asked</td>
             </tr>
             <tr>
-              <td>{props.profile.ans}</td>
-              <td>Answered</td>
+              <td className={`${darkmode && 'title-dark'}`}>{props.profile.ans}</td>
+              <td className={`${darkmode && 'title-dark'}`}>Answered</td>
             </tr>
             </tbody>
           </table>
         </div>
         
       </div>
-      <div className="upload_pic_control">
+      <div className={`upload_pic_control ${darkmode && 'bg-dark'}`}>
         <div className="update_pic_title">
-          <span>Update profile image</span>
+          <span className={`${darkmode && 'title-dark'}`}>Update profile image</span>
         </div>
         <div className="pic_upload_btn">
           <input type="file" className="upload_input" name="profileImg" onChange={singleFileChange} />
           <button className="upload_btn" onClick={handleBtnClick} type="submit">Upload</button>
-          <span className="upload_text">{singleFile?(singleFile.name.length>13?singleFile.name.slice(0,13)+"...":singleFile.name):"No files Selected"}</span>
+          <span className={`upload_text ${darkmode && 'title-dark'}`}>{singleFile?(singleFile.name.length>13?singleFile.name.slice(0,13)+"...":singleFile.name):"No files Selected"}</span>
         </div>
         <div className="update_btn_pic">
           <button onClick={uploadSingleFile}>Update</button>

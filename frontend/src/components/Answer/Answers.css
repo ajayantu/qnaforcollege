@@ -40,7 +40,6 @@
 }
 .ans-item blockquote{
     padding: 1em;
-    color: #353535;
     background: hsla(0,0%,78%,.3);
     border: 1px solid #c4c4c4;
     border-radius: 2px;
@@ -65,7 +64,6 @@
     
 }
 .answer_main_container .answers_bar{
-    background-color: rgba(208, 202, 202, 0.6);
     padding: 20px;
     /* border-radius: 5px; */
 }
@@ -113,7 +111,7 @@
 }
 .answer_main_container{
     margin-left: 15rem;
-    padding: 5px;
+    padding: 1em;
 }
 .answer_question_details .qstn_description{
     color: rgb(39, 41, 48);
@@ -138,7 +136,7 @@
 
 .editor-container .ck .ck .ck-content blockquote{
     padding: 1em;
-    color: #353535;
+    color: #fff;
     background: hsla(0,0%,78%,.3);
     border: 1px solid #c4c4c4;
     border-radius: 2px;

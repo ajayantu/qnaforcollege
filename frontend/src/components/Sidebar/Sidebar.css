@@ -7,9 +7,12 @@
     background-color: #fff;
     height: 100%;
     width: 15rem;
-    justify-content: center;
+    flex-direction: column;
     z-index: 8;
     box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+
+    border-right: 2px solid #ffffff29;
+    padding: 20px;
 }
 .sidebar-content {
     user-select: none;
@@ -39,12 +42,15 @@
     align-items: center;
     margin-left: 20px;
 }
+.sidebar-content .dark-sidemenu{
+    color: #fff;
+}
 .sidebar-content .side-menu{
     margin-bottom: 15px;
     color: #272727;
     text-decoration: none;
     /* font-weight: bold; */
-    padding: 6px;
+    padding: 8px;
     /* justify-content: center; */
 }
 .sidebar-content .side-menu  p{
@@ -54,12 +60,39 @@
     background-color: #E9E9E9;
     font-weight: bold;
     border-right: 3px solid #FBB566;
+
+    border-radius: 5px;
+    color: rgb(77, 77, 77) !important;
 }
 
 /* will only active if data-visible attribute of sidebar is true ...is set to true using javascript*/
 .sidebar[data-visible="true"]{
     transform: translateX(0%);
     
+}
+.user-sidebar{
+    pointer-events: none;
+}
+.dark{
+    background-color: #1a1c22;
+}
+.dark-mode{
+    border: 2px solid #fbb56656;
+    margin-bottom: 10px;
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #d3d3d3;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.dark-mode img{
+    width: 100%;
+
 }
 
 @media only screen and (max-width: 850px) {

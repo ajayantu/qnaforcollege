@@ -16,7 +16,6 @@
 - Notification system to keep you notified.
 - View profile page and upload profile pic
 - Pagination feature
-- Spam filtering on questions ( Currently working on..)
 
 
 ## Installation
